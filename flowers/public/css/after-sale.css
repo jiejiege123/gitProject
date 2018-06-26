@@ -1,0 +1,29 @@
+
+.section1-banner{
+    margin-top: 130px;
+}
+
+.section1-pic{
+    height: 150px;
+    overflow: hidden;
+    padding: 0;
+}
+.section1-pic img{
+    width: 100%;
+}
+
+.section-little h1{
+    font-size: 20px;
+    margin-top: 100px;
+}
+
+.section-text span{
+    font-size:15px;
+   padding-bottom: 50px;
+}
+.section-text p{
+    font-size: 12px;
+    line-height: 25px;
+
+    margin: 0;
+}

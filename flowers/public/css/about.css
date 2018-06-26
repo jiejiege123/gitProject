@@ -1,0 +1,162 @@
+.section1-banner{
+    margin-top: 130px;
+}
+
+.section1-pic{
+    height: 500px;
+    overflow: hidden;
+    padding: 0;
+}
+.section1-pic img{
+    width: 100%;
+}
+
+.section1{
+    background-color: white;
+}
+.section1-text{
+    margin-top: 100px;
+}
+.section1-text img{
+    height:80px;
+}
+.section1-hr{
+    height: 1px;
+    width: 5%;
+    background-color: #996633;
+    display: inline-block;
+    vertical-align: middle;
+}
+.section1 h1{
+    font-size:30px;
+    color: #996633
+}
+.section1 h3{
+    display: inline-block;
+    font-size: 25px;
+    color: #996633;
+    margin: 0;
+}
+.section1-text{
+    margin-bottom: 100px;
+}
+.section1-text>p{
+    font-size:14px;
+    margin-top: 30px;
+    line-height: 30px;
+}
+/*section2*/
+.section2{
+    background-color: transparent;
+    height: 300px;
+
+}
+.section2-pic img{
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: -1;
+}
+
+/*section3*/
+.section3{
+    padding: 0;
+    background-color: white;
+    margin-top: 300px;
+    padding-bottom: 100px;
+}
+.section3-div{
+    margin-right: 0!important;
+}
+.section3-titlle{
+    margin-top: 100px;
+}
+.section3-titlle>h1{
+    width: 100%;
+    font-size: 25px;
+}
+.section3-titlle>div{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border:1px solid black;
+    margin: auto;
+}
+.section3-titlle>div>div{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border:1px solid black;
+    margin: auto;
+    margin-top:4px;
+}
+.text{
+    margin-right: 0;
+}
+.text-l{
+    border-right: 1.5px solid black;
+    height: 450px;
+}
+.text-l p{
+    text-align: right;
+    line-height: 30px;
+}
+.text-l h4{
+    margin-bottom: 2px;
+}
+.text-l img{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.text-r img{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.text-r h4{
+    margin-top:20px;
+    margin-bottom: 2px;
+}
+.text-r p{
+    text-align: left;
+    line-height: 30px;
+}
+
+/*section4*/
+.section4{
+    padding: 0;
+    height: 300px;
+    overflow: hidden;
+}
+.section4 img{
+
+    width: 100%;
+}
+
+.section5{
+    background-color: white;
+    margin: 0;
+
+}
+.section5-pic img{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.section5-text{
+    margin-top:80px;
+    margin-left: 50px;
+}
+.section5-text img {
+    width: 30%;
+}
+.section5-text h3{
+    margin-bottom: 50px;
+}
+.section5-text p{
+    font-size: 18px;
+    color: #3d3f47;
+}
+
+

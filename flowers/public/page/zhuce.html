@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body{
+            background-image: url("../images/loginbg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .login{
+            color: white;
+            width: 100%;
+            /*border: 1px solid red;*/
+            margin-top: 10%;
+            text-align: center;
+        }
+        .bg{
+            background: white;
+            color: #0f0f0f;
+        }
+        .logo{
+            padding-top: 10%;
+            width: 100%;
+        }
+        .logo span{
+            font-size: 22px;
+            vertical-align: middle;
+        }
+        .line{
+            display: inline-block;
+            width: 2px;
+            height: 22px;
+            background: white;
+            margin: 0 15px ;
+
+        }
+        .content {
+            padding-top: 8%;
+            text-align: center;
+            width: 100%;
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        input{
+            outline: none;
+            font-size: 14px;
+            width: 80%;
+            height: 40px;
+            line-height: 40px;
+            /*margin-top: 10px;*/
+            background: none;
+            border: 1px solid rgba(128, 128, 128, 0.25);
+            padding-left: 10px;
+        }
+        input::-webkit-input-placeholder { /* WebKit browsers */
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 14px;
+        }
+        .test{
+            width: 80%;
+            font-size: 0;
+            margin: 0 auto;
+        }
+        #code{
+            width: 63%;
+            /*margin-right:1px;*/
+        }
+        #get{
+            width: 37%;
+            height: 40px;
+            background: #7d8e46;
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+        .bg div:last-child{
+            padding-bottom: 10%;
+        }
+        #sure{
+            width: 80%;
+            height: 40px;
+            background: black;
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            margin-top: 22px;
+        }
+        #sure:hover{
+            background-color: white;
+            border: 1px solid #A9A7A8;
+            color: black;
+        }
+        .pwd{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .pwd span{
+            width: 32%;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            font-size: 14px;
+            /*display: inline-block;*/
+            background: grey;
+            display: none;
+        }
+        .last{
+            width: 100%;
+        }
+        a{
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            color: white;
+            border-bottom: 1px solid white;
+        }
+        a:hover{
+            color: #cbcbcb;
+        }
+        .bg .prompt{
+            text-align: left;
+            color: red;
+            font-size: 10px;
+            padding-left: 10px;
+            /*display: none;*/
+        }
+        .promptdiv{
+            /*border: 1px solid red;*/
+            width: 80%;
+            margin: 0 auto;
+            color: #ff166c;
+            height: 30px;
+            text-align: left;
+        }
+        .promptdiv span{
+            text-align: left;
+        }
+        .promptdiv-sec{
+            height: 18px;
+        }
+        .repeat{
+            margin-top: 10px;
+        }
+        /*.pwd span:nth-of-type(1){*/
+            /*background: red;*/
+        /*}*/
+        /*.pwd span:nth-of-type(2){*/
+            /*background: #ffc741;*/
+        /*}*/
+        /*.pwd span:nth-of-type(3){*/
+            /*background:green;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-1">
+                <div class="login">
+                    <div class="logo">
+                        <span>花庭阁</span>
+                        <span class="line"></span>
+                        <span>COURT PAVILION</span>
+                    </div>
+                    <div class="bg">
+                        <div class="content">会员注册</div>
+                        <hr>
+                        <div><input type="text" id="tel" placeholder="手机号">
+                        </div>
+                        <div class="promptdiv"><span class="prompt prompt1"></span></div>
+                        <div><input type="password" id="pwd" placeholder="密码（由6-16位字符组成）">
+                        </div>
+                        <div class="promptdiv promptdiv-sec"><span class="prompt prompt2"></span></div>
+                        <div class="pwd">
+                            <span class="strength strength1">低</span>
+                            <span class="strength strength2">中</span>
+                            <span class="strength strength3">高</span>
+                        </div>
+                        <div class="repeat"><input type="password" id="pwd1" placeholder="重复密码">
+                        </div>
+                        <div class="promptdiv"><span class="prompt prompt3"></span></div>
+                        <div class="test">
+                            <input type="text" id="code" placeholder="验证码">
+                            <button id="get">获取验证码</button>
+                        </div>
+                        <div><button id="sure">免费注册</button></div>
+                    </div>
+                    <div class="last"><a href="/login">任性,不想注册>></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JavaScript/jquery-3.2.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script>
+        //获取焦点
+
+        //密码强度
+        $("#pwd").keyup(function () {
+            let pwd=$("#pwd").val()
+            $(".strength").css("display","inline-block")
+            if(pwd.length<5){
+                $(".prompt2").html("密码必须大于6位")
+                $(".strength1").css("background","red")
+                $(".strength2").css("background","grey")
+                $(".strength3").css("background","grey")
+                $("#pwd").css("border","1px solid #ff5a4d")
+            }
+            else if(pwd.length<11){
+                $(".strength2").css("background","#ffc741")
+                $(".strength1").css("background","grey")
+                $(".strength3").css("background","grey")
+                $(".prompt2").html("")
+                $("#pwd").css("border","1px solid rgba(128, 128, 128, 0.25)")
+            }
+            else if(pwd.length<16){
+                $(".strength3").css("background","green")
+                $(".strength1").css("background","grey")
+                $(".strength2").css("background","grey")
+                $("#pwd").css("border","1px solid rgba(128, 128, 128, 0.25)")
+                $(".prompt2").html("")
+            }
+            else {
+                $(".prompt2").html("密码必须小于16位")
+                $("#pwd").css("border","1px solid #ff5a4d")
+            }
+        })
+            //失去焦点判断
+            $("#tel").blur(function () {
+                let mytel=$("#tel").val()
+                if(mytel==""){
+                    $("#tel").css("border","1px solid #ff5a4d")
+                    $(".prompt1").html("手机号不能为空")
+                }
+                else {
+                    checkPhone()
+                }
+            })
+    // 密码
+        $("#pwd").blur(function(){
+            let pwd=$("#pwd").val()
+            if(pwd==""){
+                $("#pwd").css("border","1px solid #ff5a4d")
+                $(".prompt2").html("密码不能为空")
+                $(".strength1").css("background","grey")
+                $(".strength2").css("background","grey")
+                $(".strength3").css("background","grey")
+            }
+            // else {
+            //     checkpwd()
+            // }
+        })
+        //确认密码判断
+        $("#pwd1").blur(function () {
+            let pwd=$("#pwd").val()
+            let pwd1=$("#pwd1").val()
+            if(pwd1==""){
+                $(".prompt3").html("密码不能为空")
+                $("#pwd1").css("border","1px solid #ff5a4d")
+            }
+            else if(pwd==pwd1){
+                $(".prompt3").html("")
+                $("#pwd1").css("border","1px solid rgba(128, 128, 128, 0.25)")
+            }
+            else{
+                $(".prompt3").html("密码不一致")
+                $("#pwd1").css("border","1px solid #ff5a4d")
+            }
+        })
+        //验证码
+        $("#code").blur(function () {
+            let mycode=$("#code").val()
+            if(mycode==""){
+                $("#code").css("border","1px solid #ff5a4d")
+            }
+            else{
+                $("#code").css("border","1px solid rgba(128, 128, 128, 0.25)")
+            }
+        })
+
+        //手机号验证
+        function checkPhone(){
+            let mytel=$("#tel").val()
+            if(!(/^1[34578]\d{9}$/.test(mytel))){
+                $(".prompt1").html("输入正确手机号")
+                $("#tel").css("border","1px solid #ff5a4d")
+                return false;
+            }
+            else {
+                $.ajax({
+                    data:{tel:mytel},
+                    url:"/checktel.do",
+                    type:"post",
+                    success:function (data) {
+                        // console.log(data)
+                        if(data==0){
+                            $(".prompt1").html("手机号可用")
+                            $(".prompt1").css("color","green")
+                            $("#tel").css("border","1px solid rgba(128, 128, 128, 0.25)")
+                        }
+                        else{
+                            $(".prompt1").html("用户名已存在！")
+                            $(".prompt1").css("color","red")
+                        }
+                    }
+                })
+                // console.log(1111)
+            }
+        }
+        //密码正则验证
+        // function checkpwd() {
+        //     let pwd=$("#pwd").val()
+        //     let regExp=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/
+        //     if(!(regExp.test(pwd))){
+        //         // $(".prompt2").html("!密码长度必须在6-16个字符之间")
+        //         return false;
+        //     }
+        // }
+        //获取验证码
+        $("#get").on("click",function(){
+            let mytel=$("#tel").val()
+            if(mytel==""){
+                $("#tel").css("border","1px solid #ff5a4d")
+                $(".prompt1").html("手机号不能为空")
+            }
+            else if($(".prompt1").html()=="手机号可用"){
+                // console.log(555)
+                $.ajax({
+                    data:{tel:mytel},
+                    url:"/get.do",
+                    type:"post",
+                    success:function (data) {
+                        // console.log(data)
+                        if(data=='0'){
+                            // alert("输入正确手机号")
+                        }
+                        else if(data=='1') {
+                            // alert("验证码已发送")
+                            sendetel()
+                        }
+                    }
+                })
+            }
+        })
+        //发送验证码倒计时
+        var countdown = 60;
+        function sendetel() {
+            var obj = $("#get");
+            settime(obj);
+        }
+        function settime(obj) { //发送验证码倒计时
+            if (countdown == 0) {
+                obj.attr('disabled', false);
+                //obj.removeattr("disabled");
+                obj.html("获取验证码");
+                countdown = 60;
+                return;
+            } else {
+                obj.attr('disabled', true);
+                obj.html("重新发送(" + countdown + ")s");
+                countdown--;
+            }
+            setTimeout(function() {
+                settime(obj)
+            }, 1000)
+        }
+        //确认注册
+        $("#sure").on("click",function () {
+            let mytel=$("#tel").val()
+            let mycode=$("#code").val()
+            let mypwd=$("#pwd").val()
+            let mypwd1=$("#pwd1").val()
+            if(mytel==""){
+                $("#tel").css("border","1px solid #ff5a4d")
+            }
+            if(mycode==""){
+                $("#code").css("border","1px solid #ff5a4d")
+            }
+            if(mypwd==""){
+                $("#pwd").css("border","1px solid #ff5a4d")
+            }
+            if(mypwd1==""){
+                $("#pwd1").css("border","1px solid #ff5a4d")
+            }
+            if(mypwd!=""&&mypwd==mypwd1&&mycode!=""){
+                $.ajax({
+                    data:{tel:mytel,code:mycode,pwd:mypwd},
+                    url:"/code.do",
+                    type:"post",
+                    success:function (data) {
+                        if(data==1){
+                            alert("注册成功")
+                        }
+                        else alert("注册失败")
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# version 1.0.0.3
+
+# 直接缓存的文件
+CACHE:
+images/userHeader/1526215479562.png
+
+
+#需要在线请求的文件路径，*代表除CACHE以外的文件都进行在线请求
+NETWORK:
+*
+
+
+
+# 替代方案 ，当请求失败时需要跳转的页面
+FALLBACK:

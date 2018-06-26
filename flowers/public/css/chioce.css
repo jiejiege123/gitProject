@@ -1,0 +1,108 @@
+/*
+* @Author: ZZZ
+* @Date:   2018-05-10 14:57:28
+* @Last Modified by:   ZZZ
+* @Last Modified time: 2018-05-16 00:44:08
+*/
+.chioce{
+	width: 80.5%;
+	margin-left: 10%;
+	border: 1px solid #e8e8e8;
+	font-family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif
+}
+.j_row:first-of-type{
+	border: none
+}
+.j_row{
+	position: relative;
+    border-top: 1px dashed #dedede;
+    margin: 0 8px;
+}
+.heads{
+	position: absolute;
+	left: 11px;
+	top: 9px;
+	color: #999;
+}
+.title{
+	float: left;
+    max-width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif
+}
+.bodys{
+	padding: 0 120px 0 122px;
+}
+.body_intems{
+	height: 56px;
+	//overflow: hidden;
+	font-size: 16px;
+}
+.intem{
+	height: 100%;
+}
+.icon_tag{
+	float: left;
+    margin: 16px 40px 9px 0;
+    height: 18px;
+    color: #000;
+    text-decoration: none;
+}
+.icon_tag:hover{
+	color: #f40;
+}
+.icon_check{
+	display: none;
+    float: left;
+    margin: 4px 5px 0 0;
+    background-position: -48px -423px;
+    width: 11px;
+    height: 11px;
+}
+.bo_text{
+	float: left;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.btns{
+	text-align: center;
+}
+.bosum{
+	display: none;
+	/* display: inline-block; */
+	margin: 5px;
+	border-radius: 2px;
+	height: 24px;
+	width: 42px;
+	line-height: 22px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	color: #fff;
+    background: #F94700;
+    border: 1px solid #F94700;
+}
+.bosum:hover{
+	background: #f82800;
+}
+.bocancel{
+	display: none;
+	/* display: inline-block; */
+    margin: 5px;
+	border-radius: 2px;
+	height: 24px;
+	width: 42px;
+	line-height: 22px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+}
+.bocancel:hover{
+	color: #f82800;
+	border-color: #f82800;
+}

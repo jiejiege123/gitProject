@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container-fluid{
+            background: #F0F8FA;
+        }
+        .container{
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        span {
+            font-size: 16px;
+        }
+        /*.line1,.user,.line2{*/
+        /*display: inline-block;*/
+        /*height: 30px;*/
+        /*}*/
+        .line1{
+            width: 11%;
+            border-bottom: 1px solid grey;
+        }
+        .user{
+            width: 15%;
+            border: 1px solid grey;
+            border-bottom: none;
+            text-align: center;
+        }
+        .line2{
+            width: 72%;
+            border-bottom: 1px solid grey;
+        }
+        .user span{
+            padding: 0 10px;
+        }
+        .user,.line1,.line2{
+            vertical-align: bottom;
+            height: 35px;
+            line-height: 35px;
+            margin-top: 30px;
+            /*margin-left: 12%;*/
+            display: inline-block;
+            /*padding: 10px 20px;*/
+            /*border: 1px solid grey;*/
+            /*border-bottom: none;*/
+        }
+        .masage {
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+        .pohto-bj{
+            text-align: center;
+            font-size: 14px;
+            line-height: 20px;
+            width: 100%;
+            height: 20px;
+            background: rgba(128, 128, 128, 0.46);
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 80%;
+        }
+        .pohto-bj .bj{
+            display: inline-block;
+            position: absolute;
+            width: 30px;
+            color: rgba(15, 15, 15, 0.62);
+            text-align: center;
+            top: 0;
+            left: 0;
+            font-size: 12px;
+        }
+        .small-box:hover .pohto-bj{
+            display: block;
+        }
+        .photo span{
+            display: inline-block;
+            vertical-align: top;
+            width: 12%;
+        }
+        #upload{
+            width: 1%;
+            height: 100%;
+            border: none;
+            outline: none;
+        }
+        .name,.uname,.sex,.birthday,.dress{
+            margin: 15px 0;
+        }
+        .dress{
+            margin-bottom: 25px;
+        }
+        .name span:first-child{
+            color: red;
+        }
+        .name div,.uname span,.birthday span,.sex div,.dress span,.button span{
+            display: inline-block;
+            width: 12%;
+        }
+        .sex>span{
+            margin-right: 20px;
+        }
+        .red {
+            color: red;
+        }
+        .button button{
+            border: none;
+            outline: none;
+            background: #0f0f0f;
+            color: white;
+            padding: 7px 30px;
+            margin-left: 5px;
+        }
+        .container-fluid div:first-child{
+            font-size: 0;
+        }
+        /*头像上传*/
+        canvas{
+            /*border: 1px solid red;*/
+        }
+        .small-box{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .big-box{
+            margin-left: 8%;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            display: none;
+        }
+        .cut-box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid lightblue;
+            width: 100px;
+            height: 100px;
+        }
+        .big-box button{
+            padding: 7px 30px;
+            border: none;
+            outline: none;
+            background: #0f0f0f;
+            color: white;
+            margin: 5px;
+        }
+        button:hover{
+            background-color: white;
+            border: 1px solid #A9A7A8;
+            color: black;
+        }
+        #div1{
+            display: inline-block;
+            vertical-align: top;
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div>
+        <div class="line1"></div>
+        <div class="user"><span>个人资料修改</span></div>
+        <div class="line2"></div>
+    </div>
+    <div class="container">
+        <div class="masage"><span id="user"></span></div>
+        <div class="photo">
+            <span>当前头像：</span>
+            <div class="small-box">
+                <canvas width="100" height="100" id="smallCanvas">
+                </canvas>
+                <div class="pohto-bj">
+                    <span class="bj">编辑</span>
+                    <input type="file" id="upload">
+                </div>
+            </div>
+            <div id="div1">
+                <img src="./../images/userlogo.jpg" alt="" id="test">
+            </div>
+            <div class="big-box">
+                <canvas width="200" height="200" id="bigCanvas"></canvas>
+                <div class="cut-box"></div>
+            </div>
+        </div>
+        <div class="name">
+            <div><span>*</span><span>昵称：</span></div>
+            <input type="text" id="name">
+        </div>
+        <div class="uname"><span>真实姓名：</span>
+            <input type="text" id="uname">
+        </div>
+        <div class="sex"><div><span class="red">*</span><span>性别：</span></div>
+            <input type="radio" name="sex" value="男">男
+            <input type="radio" name="sex" value="女">女
+        </div>
+        <div class="birthday"><span>生日：</span>
+            <input type="text" id="date">
+        </div>
+        <span>例如：1999年9月9日,输入1999-09-09</span>
+        <div class="dress"><span>居住地：</span>
+            <input type="text" id="dress">
+        </div>
+        <div class="button" id="upbutton"><span></span><button>保存</button></div>
+    </div>
+</div>
+<script src="../JavaScript/jquery-3.2.1.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script>
+    $("#upload").change(function () {
+        $(".big-box").css("display","block")
+        var reader = new FileReader;
+        reader.readAsDataURL($(this)[0].files[0]);
+        reader.onload=function () {
+            var img = document.createElement("img");
+            img.src = this.result;
+            let bigCanvas= document.getElementById("bigCanvas");
+            let bigCtx = bigCanvas.getContext("2d");
+            img.onload = function () {
+                bigCtx.drawImage(this,0,0,200,200)
+                let imgData = bigCtx.getImageData(0, 0,100,100)
+                //2.3 把图像数据，再画到小的Canvas中：
+                let smallCtx = document.getElementById("smallCanvas").getContext("2d");
+                smallCtx.putImageData(imgData,0,0)
+            }
+        }
+    });
+    $(".cut-box").mousedown(function (e) {
+        var downEvent = e;
+        $(document).mousemove(function (e) {
+            var moveEvent = e;
+            var left=moveEvent.clientX - downEvent.clientX+downEvent.offsetX
+            var top=moveEvent.clientY - downEvent.clientY+downEvent.offsetY
+            if(left<0||left>100||top<0||top>100){
+                $(document).off("mousemove")
+            }
+            $(".cut-box").css({
+                left:left +"px",
+                top: top +"px"
+            });
+        });
+        //    清除移到事件，当鼠标UP时，就移除mousemove
+        $(document).mouseup(function () {
+            //1. 取消移动事件
+            $(document).off("mousemove");
+            //2. 把cut-box所框中的图像内容，画到smallCavas中去。
+            // 2.1  获取cut-box在父元素中的坐标：
+            let cutboxLeft, cutBoxTop;
+            // console.log($(".cut-box").position())
+            cutBoxTop = $(".cut-box").position().top;
+            cutboxLeft = $(".cut-box").position().left;
+            //2.2 获取在canvas中，相同坐标的图像数据：
+            let bigCtx = document.getElementById("bigCanvas").getContext("2d");
+            let imgData = bigCtx.getImageData(cutboxLeft, cutBoxTop,100,100)
+            //2.3 把图像数据，再画到小的Canvas中：
+            let smallCtx = document.getElementById("smallCanvas").getContext("2d");
+            smallCtx.putImageData(imgData,0,0)
+        });
+    })
+
+
+    //cook检查用户是否登录
+    var sessionId
+//    $("document").ready(cook)
+    function mycook() {
+        $.ajax({
+            url:"/cook.do",
+            type:"post",
+            async:false,
+//            data:"",
+//            dataType:"text",
+            success:function (data) {
+//                console.log(data)
+                if (data != '0') {
+                    // $("#user").html(data)
+                    sessionId=data
+//                    console.log(data)
+                }
+            }
+        })
+//        console.log("cook")
+    }
+    //    上传裁剪的头像
+    $("#upbutton").on("click",function () {
+        console.log('123');
+        let smallCanvas = document.getElementById("smallCanvas");
+        let uploadData = smallCanvas.toDataURL()  // 把画布中的图片，转换成base64的编码数据
+        let name=$("#name").val()
+        let uname=$("#uname").val()
+        let sex=$("[name='sex']:checked").val()
+        let date=$("#date").val()
+        let dress=$("#dress").val()
+        console.log(date)
+        $.ajax({
+            url:"/uploadPhoto.do",
+            data: {
+                myid:sessionId,
+                imgData:uploadData,
+                myname:name,
+                myuname:uname,
+                mysex:sex,
+                mydate:date,
+                mydress:dress
+            },
+            type: "post",
+            success: function (data) {
+               console.log(data)
+                if(data=='1'){
+                    upDate()
+                    // window.parent.document.getElementById("ifram").setAttribute("src",'page/shopCar.html'); 
+                    // window.parent.location.href = "http://localhost:8888/userHome"
+                    parent.location.reload();
+                }
+            }
+        })
+    })
+    //更新资料
+    $("document").ready(function () {
+        mycook();
+        upDate();
+    })
+    function upDate() {
+        $.ajax({
+            url:"/userupdate.do",
+            data:{myid:sessionId},
+            async:false,
+            type:"post",
+            success:function (data) {
+//                console.log(data)
+                $("#div1 img").attr("src","./../images/upload/"+data[0].u_url)
+                $("#name").val(data[0].u_name)
+                $("#uname").val(data[0].u_realName)
+                $("#date").val(data[0].u_bir)
+                $("#dress").val(data[0].u_adress)
+                if(data[0].u_sex=="男"){
+                    $("[name='sex']").get(0).checked="checked"
+                }
+                else{
+                    $("[name='sex']").get(1).checked="checked"
+                }
+                if(data[0].u_name==""){
+                    $("#user").html("您还没有填写资料哦，填写真实的资料，有助于好友找到你！")
+                }
+                else{
+                    $("#user").html("花庭阁欢迎您，会员："+data[0].u_name)
+                }
+                //头像更新
+                $("#test").get(0).onload=function () {
+                    let smallCtx = document.getElementById("smallCanvas").getContext("2d");
+                    smallCtx.drawImage(this,0,0,100,100)
+                    // let imgData = smallCtx.getImageData(0, 0,100,100)
+                    // smallCtx.putImageData(imgData,0,0)
+                }
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

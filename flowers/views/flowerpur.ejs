@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单页面</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link href="/css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/flowerbuy.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/js/area.js">
+    <style type="text/css">
+        a{ color:#006600; text-decoration:none;}
+        a:hover{color:#990000;}
+        .top{ margin:5px auto; color:#990000; text-align:center;}
+        .info select{ border:1px #767676 solid; background:#FFFFFF;}
+        .info{ margin:5px;}
+        .info #show{ color:#3399FF; }
+        .bottom{ text-align:right; font-size:12px; color:#CCCCCC; width:1000px;}
+        textarea.texta{
+            resize:none;
+            width: 60%;
+        }
+
+        input.labpt{margin-right: 15px;}
+        label{font-weight: 400;}
+        .adda{cursor: pointer}
+        .modal{top:200px;}
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
+        input[type="number"]{
+          -moz-appearance: textfield;
+        }
+        .span-jq{
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+            border: 1px solid #9DC1E4;
+            cursor: pointer;
+            line-height: 24px;
+        }
+        .span-s{
+            margin: 0;
+            padding-top: 2px;
+            text-align: center;
+            display: inline-block;
+            width: 42px;
+            border: 1px solid #9DC1E4;
+            border-left: none;
+            border-right: none;
+            height: 26px;
+        }
+        .span-js{
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+            border: 1px solid #9DC1E4;
+            cursor: pointer;
+            line-height: 24px
+        }
+    </style>
+</head>
+<body>
+<%- include header.ejs%>
+
+<div class="container">
+    <div class="row div-row1">
+        <div class="col-lg-2 col-md-2 col-xs-2 text-center">
+            <p><a href="#">首页</a><span>>填写订单</span></p>
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-8 row-div2 text-center ">
+            <img class="div-gmimg" src="/images/img2/TXDI.png" alt="">
+        </div>
+    </div>
+    <div class="row div-row2">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 ">
+            <h4>收货人信息 / information</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3">
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="row div-row3">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-11 col-md-11 col-xs-11">
+            <div>
+                <% if (user == undefined || flowerdz.length == 0) { -%>
+                    
+                <% } else { -%>
+                    <% for (var i = 0; i < flowerdz.length; i++) { -%>
+                        <label>
+                            <input type="radio" name="raido" value="" class="labpt" data-dz="<%= flowerdz[i].a_id%>">
+                            <p class="div-p2">
+                                <span>收货人:<%= flowerdz[i].a_user%></span>&nbsp;&nbsp;
+                                <i class="iconfont icon-dianhua1"></i><span><%= flowerdz[i].a_phone%></span>&nbsp;&nbsp;
+                                <i class="iconfont icon-dizhi1"></i><span><%= flowerdz[i].a_area%></span>
+                                <span><%= flowerdz[i].a_areas%></span>
+                            </p>
+                        </label>
+                        <br>
+                    <% } -%>
+                <% } -%>
+            </div>
+        </div>
+    </div>
+    <div class="row div-row2">
+        <div class="col-lg-2 col-md-2 col-xs-2 div-xz">
+            <% if (user == undefined) { -%>
+                
+            <% } else { -%>
+                <h5 data-toggle="modal" data-target="#myModal" class="adda">新增收货地址</h5>
+            <% } -%>
+            
+        </div>
+    </div>
+    <br><br>
+    <div class="row div-row2">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 ">
+            <h4>订货人信息 / postTime</h4>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="row div-row3">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-11 col-md-11 col-xs-11 form-inline">
+
+            <input type="text" class="form-control admin" placeholder="您的姓名">&nbsp;&nbsp;
+            <% if (user == undefined || flowerdz.length == 0) { -%>
+                <input type="text" class="form-control" placeholder="联系方式">&nbsp;&nbsp;
+            <% } else { -%>
+                <input type="text" class="form-control  adminetel" value="<%= flowerdz[0].l_tel%>">&nbsp;&nbsp;
+            <% } -%>
+            <input type="text" class="form-control adminem" placeholder="电子邮箱">
+        </div>
+    </div>
+    <br><br>
+    <div class="row div-row2">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 ">
+            <h4>送达时间 / postTime</h4>
+            <hr class="hr">
+            <input type="text" class="form-control getime" id="test5" placeholder="送达具体时间">
+        </div>
+    </div>
+    <br><br>
+    <div class="row div-row2">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 ">
+            <h4>贺卡留言 / somewords</h4>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="row div-row2">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-11 col-md-11 col-xs-11 ">
+            <div class="order-item">
+                <div class="order-item-inner card-text">  
+                    <div class="item-bd" id="cardText">
+                        <textarea class="form-control texta" id="words" name="words" rows="5" placeholder="贺卡留言+署名" maxlength="400"></textarea>
+                        <p class="helpBlock">最多200字，您还可以输入 <var class="word">200</var> 字。（仅支持中文，英文）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<br><br>
+<div class="container">
+    <div class="row div-row8">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3">
+            <h4>订单信息 / information</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 row-div7">
+            <hr class="hr">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <!--//订单//-->
+    <div class="row div-rowA">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-11 col-md-11 col-xs-11">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <div class="div-row4">
+                        <img src="/images/img/<%= flowers[0].f_url%>" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="div-row5">
+                        <div class="row">
+                            <% if (user == undefined || flowerdz.length == 0) { -%>
+                                
+                            <% } else { -%>
+                                <div class="col-lg-5 col-md-5 col-xs-5">
+                                    <h4><%= flowers[0].f_name%></h4>
+                                    <p class="p-yh"><span><%= flowers[0].f_chat%></span></p>
+                                    <p>专属话语： <span><%= flowers[0].f_word%></span></p>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-xs-7 text-right" onselectstart="return false">
+                                    <p class="div2-p">数量：
+                                        <span class="span-jq">-</span><input type="number" class="span-s" value="1"></input><span class="span-js">+</span>
+                                    </p>
+                                    <p class="p-zj">价格： <span class="span-zj"><%= flowers[0].f_p%>.00</span></p>
+                                </div>
+                            <% } -%>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr2">
+        </div>
+    </div>
+    <!-- 订单备注 -->
+    <div class="row div-row2">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 ">
+            <h4>订单备注 / somewords</h4>
+            <hr class="hr">
+        </div>
+    </div>
+    <div class="row div-row2">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-11 col-md-11 col-xs-11 ">
+            <div class="order-item">
+                <div class="order-item-inner card-text">  
+                    <div class="item-bd" id="cardText">
+                        <textarea class="form-control textb" rows="1" placeholder="备注哦" maxlength="400"></textarea>
+                        <p class="helpBlock">最多200字，您还可以输入 <var class="word">200</var> 字。（仅支持中文，英文）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row div-row2 div-zfbt">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 ">
+            <h4>支付方式 / information</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-3 col-md-3 col-xs-3 ">
+            <hr class="hr">
+        </div>
+    </div>
+
+    <div class="row div-zf">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-2 col-md-2 col-xs-2 div-wxzf">
+            <div>
+                <img id="img-wx" src="../images/img2/微信支付.png" alt="">
+                <i class="iconfont icon-duigou1 div-i"></i>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-xs-2 div-wxzf">
+            <div>
+                <img id="img-zfb" src="../images/img2/支付宝.png" alt="">
+                <i class="iconfont icon-duigou1 div-i2"></i>
+            </div>
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-2 col-md-2 col-xs-2 div-zj">
+            <p>总计: <span class="allpay"></span></p>
+            <p>会员价： <span class="lastpay"></span></p>
+        </div>
+        <div class="col-lg-2 col-md-2 col-xs-2 div-tj text-center">
+            <button id="btn-TJ">提交订单</button>
+        </div>
+    </div>
+</div>
+<!-- 地址模态框 -->
+<section>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">返回</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">填写新地址</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="navbar-form  text-left" >
+                        <div class="form-group col-lg-12 " id="div-sh">
+                            <label>收货人：</label>
+                            <input id="inputName" type="text" class="form-control" placeholder="收货人姓名">
+
+                        </div>
+                        <div class="form-group col-lg-12" id="div-dh">
+                            <label>电话：</label>
+                            <input id="inputTel" type="text" class="form-control" placeholder="收货人电话">
+                        </div>
+
+                        <div class="form-group col-lg-12" id="div-dz">
+
+                            <div class="info">
+                                <div>
+                                    <label>城市：</label>
+                                    <select id="s_province" class="form-control" name="s_province"></select>&nbsp;&nbsp;
+                                    <select id="s_city"  class="form-control" name="s_city" ></select>&nbsp;&nbsp;
+                                    <select id="s_county"  class="form-control" name="s_county"></select>
+                                    <script class="resources library" src="../js/area.js" type="text/javascript"></script>
+
+                                    <script type="text/javascript">_init_area();</script>
+                                </div>
+                                <div id="show"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-12" id="div-jd">
+                            <label>街道：</label>
+                            <input id="inputContacts" type="text" class="form-control" placeholder="详细地址">
+                        </div>
+                    </form>
+                    <div class="col-lg-12" style="margin-top: 30px"></div>
+                    <div class="row" ></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel-add">取消</button>
+                        <button id="buttonAdd" type="button" data-dismiss="modal" class="btn btn-primary">添加</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</section>
+<%- include footer.ejs%>
+<script src="/JavaScript/jquery-3.2.1.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/JavaScript/js.js"></script>
+<script src="/js/laydate/laydate.js"></script>
+<script>
+    //上传新收货地址
+    $("#buttonAdd").click(function (e) {
+        var name=$("#inputName").val()
+        var tel = $("#inputTel").val();
+        var addree = $("#s_province").val()+$("#s_city").val()+$("#s_county").val()
+        var addrees = $("#inputContacts").val()
+        var time = $("#test5").val()
+        let xhr
+        if (window.XMLHttpRequest){
+            xhr = new XMLHttpRequest()
+        }else if (window.ActiveXObject){
+            xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+        xhr.open("post","/flowerAddress",true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange=function () {
+            let data = xhr.responseText;
+            console.log(data);
+            if (data == 1) {
+                location.href = window.location.href;
+            }
+        }
+        xhr.send("myName="+name+"&tel="+tel+"&addree="+addree+"&time="+time+"&addrees="+addrees)
+    })
+
+    //选中支付方式函数
+    var a;
+    $("#img-wx").click(function () {
+        //console.log("222222222")
+        $(".div-i").css({display:"block"})
+        $(".div-i2").css({display:"none"})
+        $("#img-wx").addClass("border")
+        $("#img-zfb").removeClass("border")
+        $(".div-gmimg").attr("src","../images/img2/flower-gm.png")
+        a=1
+    })
+    $("#img-zfb").click(function () {
+        //console.log("6666")
+        $(".div-i").css({display:"none"})
+        $(".div-i2").css({display:"block"})
+        $("#img-zfb").addClass("border")
+        $("#img-wx").removeClass("border")
+        $(".div-gmimg").attr("src","../images/img2/flower-gm.png")
+        a=2
+    })
+    //选中支付函数后跳转页面函数
+    $("#btn-TJ").click(function () {
+        function p(s) {
+            return s < 10 ? '0' + s: s;
+        }
+        var myDate = new Date();
+        //获取当前年
+        var year=myDate.getFullYear();
+        //获取当前月
+        var month=myDate.getMonth()+1;
+        //获取当前日
+        var date=myDate.getDate(); 
+        var h=myDate.getHours();       //获取当前小时数(0-23)
+        var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+        var s=myDate.getSeconds();
+        <% if (flowerdz.length == 0) { -%>
+            var tel = 0
+        <% } else { -%>
+            var tel = <%= flowerdz[0].l_tel%>;
+            var fooid = '<%= flowerdz[0].l_tel%>'.slice(-2)
+        <% } -%>
+        var now=year+'-'+p(month)+"-"+p(date)+" "+p(h)+':'+p(m)+":"+p(s);
+        var adressid = $("input[type='radio']:checked").attr("data-dz")
+        var order = {
+            'f_id': '<%= flowers[0].f_id%>',
+            'adressid': adressid,
+            'admin': '<%= user%>',
+            'adminname': $('.admin').val(),
+            'adminetel': $('.adminetel').val(),
+            'adminem': $('.adminem').val(),
+            'getime': $('.getime').val(),
+            'poword': $('.texta').val(),
+            'oword': $('.textb').val(),
+            'flower': '<%= flowers[0].f_id%>',
+            'flnum': $('.span-s').val(),
+            'flpay': $('.lastpay').html(),
+            'payway': a,
+            'time': now,
+            'foid': myDate.getTime() + fooid,
+        }
+        $.ajax({
+            url:'/flowerOrder',
+            type: 'post',
+            data: order,
+            success:function (data) {
+                console.log(data);
+                if (data == '1') {
+
+                    window.location.href = "http://localhost:8888/flowerZhtml?user=<%= user%>&pay="+$('.lastpay').val()+"&foid="+myDate.getTime() + fooid
+                }
+            }
+        })
+    })
+
+    //数量函数
+    $(".div2-p").on("click",".span-js",function (e) {
+        e.preventDefault()
+        var c = $(this).parent(".div2-p").children(".span-s").val()
+        //var zj = $(this).parent(".div2-p").siblings(".p-zj").children(".span-zj").text()
+        var zj = document.getElementsByClassName('p-zj')[0].innerText
+        console.log(zj);
+        if(c>=1){
+            c++
+            zj=Number(zj)+<%= flowers[0].f_p%>+".00"
+            $(this).parents(".div2-p").children(".span-s").val(c)
+            // $(this).parent(".div2-p").siblings(".p-zj").children(".span-zj").text(zj)
+            document.getElementsByClassName('p-zj')[0].innerText = zj
+            document.getElementsByClassName('p-zj')[0].innerText = zj
+            var allpay = document.getElementsByClassName('allpay')[0];
+            var lastpay = document.getElementsByClassName('lastpay')[0];
+            allpay.innerText = zj
+            lastpay.innerText = zj
+        }
+    })
+    $(".div2-p").on("click",".span-jq",function (e) {
+        e.preventDefault()
+        var c = $(this).parent(".div2-p").children(".span-s").val()
+        var zj = document.getElementsByClassName('p-zj')[0].innerText
+
+        if(c>=2){
+            c--
+            zj=(Number(zj)-<%= flowers[0].f_p%>)+".00"
+            $(this).parent(".div2-p").children(".span-s").val(c)
+            //$(this).parent(".div2-p").siblings(".p-zj").children(".span-zj").text(zj);
+            document.getElementsByClassName('p-zj')[0].innerText = zj
+            var allpay = document.getElementsByClassName('allpay')[0];
+            var lastpay = document.getElementsByClassName('lastpay')[0];
+            allpay.innerText = zj
+            lastpay.innerText = zj
+        }
+    })
+    
+    //传递花的数量
+    $(function () {
+        var numas = document.getElementsByClassName('span-s')[0];
+        numas.value = sessionStorage.getItem("nums");
+        var fpay = document.getElementsByClassName('p-zj')[0];
+        fpay.innerText = Number(numas.value*<%= flowers[0].f_p%>)+".00";
+        var allpay = document.getElementsByClassName('allpay')[0];
+        var lastpay = document.getElementsByClassName('lastpay')[0];
+        allpay.innerText = fpay.innerText;
+        lastpay.innerText = fpay.innerText;
+    })
+    //三级联动函数
+</script>
+<script type="text/javascript">
+    var Gid  = document.getElementById ;
+    var showArea = function(){
+        Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +
+            Gid('s_city').value + " - 县/区" +
+            Gid('s_county').value + "</h3>"
+    }
+    Gid('s_county').setAttribute('onchange','showArea()');
+    //时间
+</script>
+
+<script>
+    laydate.render({
+        elem: '#test5'
+        ,type: 'datetime'
+    });
+</script>
+</body>
+</html>

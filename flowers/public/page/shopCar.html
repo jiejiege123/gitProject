@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <!--<link href="../css/style.css" rel="stylesheet" type="text/css">-->
+    <link href="../css/shopCar.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <table>
+                <thead>
+                    <tr class="mytr">
+                        <th class="boxth"><input type="checkbox" id="headAllCheck"><span id="thAllCheck">全选</span></th>
+                        <th class="myth">商品信息</th>
+                        <th class="myth">价格</th>
+                        <th class="myth">数量</th>
+                        <th class="myth">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="mytbody">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="mypage">
+            <button class="downPage pull-right">下一页</button><button class="upPage pull-right">上一页</button>
+        </div>
+        <div class="footSel">
+            <input type="checkbox" class="mybox" id="footAllCheck">
+            <button id="allcheck" class="btn-info">全选</button>
+            <button id="alldel" class="btn-danger">删除</button>
+        </div>
+        <div class="foot2">
+            <span> <span>已选商品<span class="moneyspan" id="totalNum">0</span>件</span><span class="footspan">合计（不含运费）：</span><span class="moneyspan" id="theTotalMoeny">0.00</span><button id="payBtn">结算</button></span>
+        </div>
+    </div>
+    <!--此模态框用于删除时提醒-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>-->
+                    <h4 class="modal-title" id="myModalLabel">温馨提醒</h4>
+                </div>
+                <div class="modal-body">
+                    <h4 id="warnText">确定删除该商品吗？</h4>
+                    <div class="modalBtn">
+                        <button type="button" id="modalSure">确定</button>
+                        <button type="button" id="modalClose" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../JavaScript/jquery-3.2.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../JavaScript/js.js"></script>
+    <script src="../JavaScript/shopCar.js"></script>
+</body>
+</html>

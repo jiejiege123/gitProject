@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>会员中心</title>
+	<link rel="stylesheet" href="../css/grade.css">
+	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/font/iconfont.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="title">
+		<div class="top_bar" id="grade">
+			<button type="" class="btnsck">我的会员等级</button>
+			<button type="" class="btns">会员级别规则</button>
+			<button type="" class="btns">获取花瓣值</button>
+		</div>
+		<div class="content" style="display: block">
+			<img src="../images/QQ图片20180516012413.png" alt="">
+		</div>
+		<div class="content" style="display: none">
+			<table class="table-striped table table-bordered">
+				<caption>花庭阁会员细则</caption>
+				<thead>
+					<tr>
+						<th class="text-center">一星会员</th>
+						<th class="text-center">二星会员</th>
+						<th class="text-center">三星会员</th>
+						<th class="text-center">四星会员</th>
+						<th class="text-center">五星会员</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>花瓣 0--999</td>
+						<td>花瓣 1000-1999</td>
+						<td>花瓣 2000--2999</td>
+						<td>花瓣 3000-4999</td>
+						<td>花瓣 5000+</td>
+					</tr>
+					<tr>
+						<td>注册即为一星会员，赠送30花瓣</td>
+						<td>会员有效期1年，1年后扣除200花瓣值，根据剩余花瓣重新计算级别。</td>
+						<td>会员有效期1年，1年后扣除500花瓣值，根据剩余花瓣重新计算级别</td>
+						<td>会员有效期1年，1年后扣除800花瓣值，根据剩余花瓣重新计算级别。</td>
+						<td>会员有效期1年，1年后扣除1000花瓣值，根据剩余花瓣重新计算级别</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table-striped table table-bordered">
+				<thead>
+					<tr>
+						<th class="text-center">会员特权</th>
+						<th class="text-center">一星会员</th>
+						<th class="text-center">二星会员</th>
+						<th class="text-center">三星会员</th>
+						<th class="text-center">四星会员</th>
+						<th class="text-center">五星会员</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>配送费</td>
+						<td>满800元免远郊配送费99</td>
+						<td>满700元远郊免配送费</td>
+						<td>满500元远郊免配送费</td>
+						<td>满300元远郊免配送费</td>
+						<td>免远郊配送费</td>
+					</tr>
+					<tr>
+						<td>会员特价</td>
+						<td>无</td>
+						<td>二星会员优惠</td>
+						<td>二、三星会员优惠别。</td>
+						<td>二、三、四星会员优惠级别</td>
+						<td>全部会员优惠</td>
+					</tr>
+					<tr>
+						<td>生日礼包</td>
+						<td>无</td>
+						<td>无</td>
+						<td>无</td>
+						<td>可享</td>
+						<td>可享</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="content" style="display: none">
+			<table class="table-striped table table-bordered lat">
+				<caption>如何获取花瓣</caption>
+				<tbody>
+					<tr>
+						<td>登录：</td>
+						<td>每日第一次手动登录后获得5个花瓣。</td>
+					</tr>
+					<tr class="">
+						<td>买花</td>
+						<td>订单完成后获得花瓣（购物花瓣=结算金额的X等级/2</td>
+					</tr>
+					<tr class="">
+						<td>买花次数</td>
+						<td>一个季度（90天）内，购花六次且订单完成，下个季度送200个花瓣</td>
+					</tr>
+					<tr class="">
+						<td>评价</td>
+						<td>评价审核成功获得20个花瓣。</td>
+					</tr>
+					<tr class="">
+						<td>晒单</td>
+						<td>发送图片评价被选为鲜花故事，送50个花瓣。</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function clickChange(btn,divs){
+			for (var i = 0; i < btn.length; i++) {//遍历按钮
+				var a = btn[i];//设置按钮的index=i（第一个的是0 第二个的是1）
+				a.index = i;
+				btn[i].onclick = function(){//点击时
+					for (var i = 0; i < btn.length; i++) {
+						btn[i].className = 'btns';
+					}
+					this.className = 'btnsck';
+					for (var i = 0; i < divs.length; i++) {//遍历div
+						divs[i].style.display = 'none';//设置所有的div的display都是none
+					}
+					divs[this.index].style.display = 'block';//设置被点击的这个div的display是block
+				};
+			}
+			return true;
+		}
+
+		var grade = document.getElementById('grade').getElementsByTagName('button');
+		var content = document.getElementsByClassName('content');
+
+		clickChange(grade,content);
+	</script>
+</body>
+</html>

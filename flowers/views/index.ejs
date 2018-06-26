@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>首页-花庭阁</title>
+	<link rel="stylesheet" href="">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+	<%- include header.ejs%>
+	<!--内容-->
+	<div>
+
+	</div>
+	<section>
+		<!-----------------section1---------------------------------->
+		<div class="container-fluid section1">
+			<!--轮播-->
+			<div class="row section1-lb">
+				<div class="col-lg-12 section1-lb-pic">
+					<!--header3轮播图-->
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="banner-but active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1" class="banner-but"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2" class="banner-but"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+
+							<div class="item active">
+								<img src="images/index/<%= contentBan[0].i_url%>" alt="...">
+							</div>
+
+							<div class="item">
+								<img src="images/index/<%= contentBan[1].i_url%>" alt="...">
+							</div>
+
+							<div class="item">
+								<img src="images/index/<%= contentBan[2].i_url%>" alt="...">
+							</div>
+						</div>
+
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--板块之间标题-->
+			<div class="row ">
+				<div class="col-lg-12 little-text">
+					<div class=" section-title1 text-center">
+						<h1>新品上架</h1>
+						<p>NEW ARRIVAL</p>
+					</div>
+					<div class="section-title2"></div>
+				</div>
+			</div>
+
+			<!-------------最新产品-->
+			<div class="row section1-pad ">
+				<div class="col-lg-2 col-lg-offset-2 section1-1">
+					<div class="section1-pic" >
+						<img src="images/img/<%= content[0].f_url%>" alt="">
+					</div>
+					<h1><%= content[0].f_name%></h1>
+					<p>RMB:<%= content[0].f_p%></p>
+					<button>查看详情</button>
+				</div>
+
+				<div class="col-lg-2 section1-1">
+					<div class="section1-pic" >
+						<img src="images/img/<%= content[1].f_url%>" alt="">
+					</div>
+					<h1><%= content[1].f_name%></h1>
+					<p>RMB:<%= content[1].f_p%></p>
+					<button>查看详情</button>
+				</div>
+
+				<div class="col-lg-2 section1-1">
+					<div class="section1-pic" >
+						<img src="images/img/<%= content[2].f_url%>" alt="">
+					</div>
+					<h1><%= content[2].f_name%></h1>
+					<p>RMB:<%= content[2].f_p%></p>
+					<button>查看详情</button>
+				</div>
+
+
+				<div class="col-lg-2 section1-1">
+					<div class="section1-pic" >
+						<img src="images/img/<%= content[3].f_url%>" alt="">
+					</div>
+					<h1><%= content[3].f_name%></h1>
+					<p>RMB:<%= content[3].f_p%></p>
+					<button>查看详情</button>
+				</div>
+
+			</div>
+			<!--更多产品-->
+			<div class="col-lg-3 col-lg-offset-9 more ">
+				<a href="./page/profess.html"><p>MORE >></p></a>
+			</div>
+		</div>
+
+		<!------------------section2--------------------------------->
+		<div class="container-fluid section2">
+			<div class="row little-text">
+				<div class="col-lg-12">
+					<div class=" section-title1 text-center">
+						<h1>鲜花作品</h1>
+						<p>FLOWERS WORK</p>
+					</div>
+					<div class="section-title2"></div>
+				</div>
+
+
+			</div>
+
+			<div class="row section2-pic">
+				<div class="col-lg-2 col-lg-offset-2" ><div><img src="images/index/<%= contentPro[0].pro_url%>" alt=""></div></div>
+				<div class="col-lg-2"><div><img src="images/index/<%= contentPro[1].pro_url%>" alt=""></div></div>
+				<div class="col-lg-2"><div><img src="images/index/<%= contentPro[2].pro_url%>" alt=""></div></div>
+				<div class="col-lg-2"><div><img src="images/index/<%= contentPro[3].pro_url%>" alt=""></div></div>
+			</div>
+
+
+			<div class="row section2-pic">
+				<div class="col-lg-2 col-lg-offset-2" ><div><img src="images/index/<%= contentPro[4].pro_url%>" alt=""></div></div>
+				<div class="col-lg-2"><div><img src="images/index/<%= contentPro[5].pro_url%>" alt=""></div></div>
+				<div class="col-lg-2"><div><img src="images/index/<%= contentPro[6].pro_url%>" alt=""></div></div>
+				<div class="col-lg-2"><div><img src="images/index/<%= contentPro[7].pro_url%>" alt=""></div></div>
+			</div>
+
+			<div class="col-lg-3 more col-lg-offset-9">
+				<a href="./page/profess.html"><p>MORE >></p></a>
+			</div>
+		</div>
+		<!------------------section3--------------------------------->
+		<div class="container-fluid section3">
+			<div class="row little-text">
+				<div class="col-lg-12">
+					<div class=" section-title1 text-center">
+						<h1>网上订花</h1>
+						<p>RESERVATION</p>
+					</div>
+					<div class="section-title2"></div>
+				</div>
+
+			</div>
+
+			<div class="row section3-mar">
+				<div class="col-lg-8 col-lg-offset-2 section3-div">
+                    <% for(var i = 0; i < contentRes.length; i++) {%>
+					<div class="col-lg-4 section3-text">
+						<div>
+							<h1><%= contentRes[i].ir_h1%></h1>
+							<h4><%= contentRes[i].ir_h4%></h4>
+							<hr>
+							<p><%= contentRes[i].ir_p%></p>
+							<button>立即咨询</button>
+						</div>
+					</div>
+                    <% } %>
+
+				</div>
+				<div class="col-lg-3 more col-lg-offset-9">
+					<a href="./page/profess.html"><p>MORE >></p></a>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+		<!------------------section4--------------------------------->
+		<div class="container-fluid section4"></div>
+		<!------------------section5--------------------------------->
+		<div class="container-fluid section5">
+			<div class="row section5-gs">
+				<div class="col-lg-12 text-center">
+					<div>
+						<p>鲜花故事</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row section5-lb">
+
+				<div class="col-lg-8 col-lg-offset-2">
+					<div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
+
+						<div class="carousel-inner inner-pd" role="listbox">
+							<div class="item active">
+
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[0].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[0].u_realName%></h1>
+									<p><%= contentCom[0].e_word%></p>
+								</div>
+
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[1].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[1].u_realName%></h1>
+									<p><%= contentCom[1].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[2].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[2].u_realName%></h1>
+									<p><%= contentCom[2].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[3].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[3].u_realName%></h1>
+									<p><%= contentCom[3].e_word%></p>
+								</div>
+							</div>
+							<div class="item">
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[4].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[4].u_realName%></h1>
+									<p><%= contentCom[4].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[5].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[5].u_realName%></h1>
+									<p><%= contentCom[5].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[6].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[6].u_realName%></h1>
+									<p><%= contentCom[6].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[7].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[7].u_realName%></h1>
+									<p><%= contentCom[7].e_word%></p>
+								</div>
+							</div>
+
+							<div class="item">
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[8].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[8].u_realName%></h1>
+									<p><%= contentCom[8].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[9].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[9].u_realName%></h1>
+									<p><%= contentCom[9].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[10].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[10].u_realName%></h1>
+									<p><%= contentCom[10].e_word%></p>
+								</div>
+								<div class="col-lg-3 section5-1">
+									<div class="section5-pic" >
+										<img src="images/index/<%= contentCom[11].e_url%>" alt="">
+									</div>
+									<h1><%= contentCom[11].u_realName%></h1>
+									<p><%= contentCom[11].e_word%></p>
+								</div>
+							</div>
+						</div>
+
+
+						<a class="left-pl" href="#carousel-example-generic1" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right-pl" href="#carousel-example-generic1" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+		<!------------------section6--------------------------------->
+		<div class="container-fluid section6">
+			<div class="col-lg-12 section6-pic">
+				<img src="images/index/banner4.png" alt="">
+			</div>
+		</div>
+	</section>
+	<!--尾部-->
+    <%- include footer.ejs%>
+	<!------------背景图 --------------->
+	<div class="pic">
+		<img src="images/index/picture9.png" alt="">
+	</div>
+	</footer>
+
+<script src="JavaScript/jquery-3.2.1.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+	$('.quitess').on("click",function () {
+		$.ajax({
+		    url:"/quite",
+		    type:"post",
+		    success:function (data) {
+		        console.log(data)
+		        if(data=="1"){
+		            location.href="../";
+		        }
+		        else{
+		            // $(".loginpromit").css("display","block")
+		            $(".loginpromit").html("!账号或密码不正确")
+		        }
+		    }
+		})
+	});
+</script>
+</body>
+</html>

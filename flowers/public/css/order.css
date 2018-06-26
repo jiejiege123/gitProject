@@ -1,0 +1,184 @@
+.header-3-pic{
+    height: 150px;
+    overflow: hidden;
+    padding: 0;
+}
+.header-3-pic img{
+    width: 100%;
+    padding: 0;
+}
+/*路径导航*/
+.pathH2 span{
+    color: #ddc296;
+    font-size: 18px;
+}
+.pathH2 a{
+    color: #ddc296;
+    font-size: 20px;
+}
+/*时间轴*/
+.timeDiv{
+    height: 80px;
+    margin:20px 0;
+}
+.timeDiv>div{
+   float:left;
+    width:16.6%;
+}
+.iconDiv{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    line-height: 50px;
+    border: 3px solid #e1dfe0;
+}
+.borderDiv{
+    position: relative;
+}
+.lineDiv{
+    position: absolute;
+    background-color:  #e1dfe0;
+    height:2px;
+    width:45%;
+    top:48%;
+    right: 0;
+    border-right: none;
+}
+.leftDiv{
+    left: 0;
+    border-left: none;
+}
+.bgDiv{
+    background-color: #dec194;
+    border: none;
+}
+/*订单信息*/
+.menuOrder{
+    margin-bottom: 30px;
+    height:190px;
+}
+.menuOrder>div{
+    border: 1px solid #e1dfe0;
+    height: 200px;
+    float: left;
+}
+.leftMenuOrder{
+    width: 39%;
+}
+.textP{
+    text-indent:2em;
+}
+.menuOrderHead{
+    background-color: #e1dfe0;
+    height: 50px;
+    margin-top: -20px;
+}
+.menuOrderHead h3{
+    line-height: 50px;
+    height: 50px;
+    text-indent:1em;
+}
+.menuOrderHead~div{
+    margin-top: 20px;
+}
+.menuOrderHead~div>p{
+   line-height:20px;
+}
+.rightMenuOrder{
+    width:61%;
+}
+.rightMenuOrder>div{
+    float: left;
+}
+.rightMenuOrder>div:first-child{
+    width:30%;
+    height:130px;
+}
+.rightMenuOrder>div:first-child p{
+    font-size:30px;
+    padding-top:25%;
+    color:#5d79ca;
+}
+.rightMenuOrder>div:nth-of-type(2){
+    position: relative;
+    height:130px;
+    width:70%;
+    padding-top:5%;
+}
+.rightMenuOrder>p{
+    margin: 0 auto;
+    width:70%;
+}
+.yBtn{
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    padding:2% 3%;
+    margin-left: 10px;
+}
+.yBtn:hover{
+    background-color: white;
+    border: 1px solid #A9A7A8;
+    color: black;
+}
+/*订单列表*/
+table{
+    border: 1px solid #e1dfe0;
+    width: 100%;
+    text-align: center;
+}
+thead th{
+    text-align: center;
+    line-height: 30px;
+}
+.lastTd{
+    border-left: 1px solid #e1dfe0;
+}
+td:nth-of-type(1){
+    width:20%;
+}
+td:nth-of-type(2){
+    width:40%;
+}
+.flowerName{
+    display: block;
+    height: 100%;
+}
+.flowerWord{
+    border-left: 1px solid black;
+}
+#content td:first-child{
+    width: 15%;
+}
+#content img{
+    width:100px;
+    vertical-align: middle;
+    padding:5% 0;
+}
+/*底部表格*/
+.footerTable{
+    width: 100%;
+    height:180px;
+    border: 1px solid #e1dfe0;
+}
+.footerTable>div{
+    float: left;
+}
+.footerTable>div:first-child{
+    width:80%;
+    line-height: 50px;
+}
+.footerTable>div:first-child p{
+    text-indent: 2em;
+    padding-top:6%;
+}
+.footerTable>div:nth-of-type(2){
+    padding: 5% 0;
+
+}
+.spay{
+    color:#be3746;
+    font-size: 20px;
+    font-weight: bold;
+}

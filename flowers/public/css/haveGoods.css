@@ -1,0 +1,88 @@
+.top_bar{
+    border-bottom: black 1px solid;
+    padding-left: 70px;
+    position: relative;
+}
+.btns{
+    background-color: #CCCCCC;
+    border: black 1px solid;
+    height: 40px;
+    width: 115px;
+    margin-right: 30px;
+    position: relative;
+    bottom: -1px;
+    outline: none
+}
+.btnsck{
+    border: black 1px solid;
+    height: 40px;
+    width: 115px;
+    margin-right: 30px;
+    position: relative;
+    bottom: -1px;
+    background-color: white;
+    border-bottom-color: white;
+    outline: none
+}
+/*thead*/
+thead th{
+    text-align: center;
+}
+/*tbody*/
+.bgTr{
+    background-color:#e1dfe0;
+}
+.goodsDiv{
+    height:80%;
+    width:80%;
+    margin: 0 auto;
+}
+.goodsDiv img{
+    width:70%;
+}
+.listTr td:not(:first-child){
+    vertical-align: middle;
+}
+.listTr td:nth-of-type(1){
+    width:20%;
+}
+.listTr td:nth-of-type(2){
+    width:30%;
+}
+.flowerName{
+    display: block;
+    height: 100%;
+}
+.flowerMenu{
+    border-left: 1px solid black;
+}
+tbody i{
+    cursor: pointer;
+}
+.listTr td:nth-last-of-type(2) p{
+    cursor: pointer;
+}
+.listTr td:nth-last-of-type(1) p{
+    cursor: pointer;
+}
+.listTr td:nth-last-of-type(1) button{
+    cursor: pointer;
+    margin-top:0;
+    margin-bottom: 5px;
+}
+.noImg{
+    width:100px;
+}
+/*按钮*/
+.pageBtn{
+    margin-top: 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+}
+.pageBtn:hover{
+    background-color: white;
+    border: 1px solid #A9A7A8;
+    color: black;
+}

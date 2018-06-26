@@ -1,0 +1,28 @@
+/*footer*/
+.footer{
+    background-color: white;
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer-li>ul>li{
+    list-style: none;
+    line-height: 30px;
+}
+.footer-li>ul>li>a{
+    color: #585858;
+}
+.footer-li>ul>li:first-child{
+    font-size: 20px;
+}
+
+.footer1{
+    height: 50px;
+    background-color: black;
+    overflow: hidden;
+}
+.footer1 p{
+    color: white;
+    line-height: 50px;
+}

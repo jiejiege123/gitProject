@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link href="/css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/flowerPar.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <style type="text/css" media="screen">
+        input.labpt{margin-right: 15px;}
+        label{font-weight: 400;}
+        .adda{cursor: pointer}
+        .modal{top:200px;}
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
+        input[type="number"]{
+          -moz-appearance: textfield;
+        }
+        .span-jq{
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+            border: 1px solid #9DC1E4;
+            cursor: pointer;
+            line-height: 24px;
+        }
+        .span-s{
+            margin: 0;
+            padding-top: 3px;
+            text-align: center;
+            display: inline-block;
+            width: 42px;
+            border: 1px solid #9DC1E4;
+            border-left: none;
+            border-right: none;
+            height: 26px;
+        }
+        .span-js{
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+            border: 1px solid #9DC1E4;
+            cursor: pointer;
+            line-height: 24px
+        }
+        #myModal,.modal-content{
+            width:50%;
+            margin-left:25%;
+        }
+        .modal-header{
+            background-color: #000000;
+            color:white;
+        }
+        .modal-body{
+            text-align: center;
+        }
+        .modal-body>h4{
+            font-size: 15px;
+        }
+        .modalBtn>button{
+            background-color: black;
+            color: white;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<%- include header.ejs%>
+
+<div class="container div-cont">
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-4 col-md-4 col-xs-4 row-div">
+            <img src="../images/img/<%= flowermes[0].f_url%>" alt="">
+        </div>
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-6 col-md-6 col-xs-6 row-div2">
+            <h3><%= flowermes[0].f_name%></h3>
+            <p>专属花语：<%= flowermes[0].f_word%></p>
+            <p>主材料：<%= flowermes[0].f_mr%></p>
+            <p>包 装：<%= flowermes[0].f_pk%></p>
+            <p class="div2-pp1"><span id="span-jg">价格：<%= flowermes[0].f_p%></span><span><%= flowermes[0].f_chat%></span></p>
+            <p class="div2-p" onselectstart="return false;">数量：
+                <span class="span-jq">-</span><input type="number" class="span-s" value="1"></input><span class="span-js">+</span>
+            </p>
+            <p class="p-i"><i class="iconfont icon-shoucang"></i>加入收藏夹</p>
+            <% if (user != undefined) { %>
+            <button class="btn-gm"><a href="/flowerbuy/<%= flowermes[0].f_id %>">立即购买</a></button>
+            <% } else { %>
+            <button class="btn-gm"><a href="/login">立即购买</a></button>
+            <% } %>
+            <% if (user != undefined) { %>
+            <button class="btn-jr">加入购物车</button>
+            <% } else { %>
+            <button class="btn-jr"><a href="/login">加入购物车</a></button>
+            <% } %>
+            <!--<button class="btn-jr">加入购物车</button>-->
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-xs-1"></div>
+        <div class="col-lg-2 col-md-2 col-xs-2 row2-div">
+            <h4>猜你喜欢</h4>
+            <hr>
+            <% for(var i = 0; i < flowerran.length; i++) {%>
+            <div>
+                <a href="/flowerPars/<%= flowerran[i].f_id %>">
+                    <img src="/images/img/<%= flowerran[i].f_url%>" alt="">
+                </a>
+                <h5><%= flowerran[i].f_name%></h5>
+                <h6 id="div-h6"><%= flowerran[i].f_word%></h6>
+                <h6>￥<%= flowerran[i].f_p%></h6>
+            </div>
+            <% } %>
+            <!--<div>-->
+                <!--<a href="#">-->
+                    <!--<img src="/images/img/10007.jpg" alt="">-->
+                <!--</a>-->
+                <!--<h5>29精品玫瑰礼盒</h5>-->
+                <!--<h6>慢慢喜欢你 | LIKE YOU SLOWLY</h6>-->
+                <!--<h6>￥299</h6>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<a href="#">-->
+                    <!--<img src="/images/img/10008.jpg" alt="">-->
+                <!--</a>-->
+                <!--<h5>29精品玫瑰礼盒</h5>-->
+                <!--<h6>慢慢喜欢你 | LIKE YOU SLOWLY</h6>-->
+                <!--<h6>￥299</h6>-->
+            <!--</div>-->
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-8 row2-div2">
+
+
+
+            <button type="button" id="button-com">商品详情</button>
+            <button type="button" id="button-app">用户评论</button>
+            <div class="row2-div4">
+                <% if (flowers[0].f_msg != undefined) { -%>
+                    <%- flowers[0].f_msg%>
+                <% } else { -%>
+                    <img src="/images/imgFlowers/<%= flowers[0].fi_url1 %>" alt="">
+                    <img src="/images/imgFlowers/<%= flowers[0].fi_url2 %>" alt="">
+                    <img src="/images/imgFlowers/<%= flowers[0].fi_url3 %>" alt="">
+                    <img src="/images/imgFlowers/<%= flowers[0].fi_url4 %>" alt="">
+                    <img src="/images/imgFlowers/<%= flowers[0].fi_url5 %>" alt="">
+                    <img src="/images/imgFlowers/<%= flowers[0].fi_url6 %>" alt="">
+                <% } -%>
+                
+            </div>
+            <!-- 用户评价 -->
+            <div class="row2-div3">
+                <div class="row3-div5">
+                    
+                    <% if (flowers[0].f_msg != undefined) { -%>
+                        
+                    <% } else { -%>
+                        <div>
+                            <img src="/images/img/<%= flowerApps[0].u_url%>" alt="">
+                        </div>
+                        <div class="right-div">     
+                            <p>整体评分：<%= flowerApps[0].e_grade%>  <span>评论时间：<%= flowerApps[0].a_ids%></span></p>
+                            <div></div>
+                            <div>
+                                <img src="/images/img/<%= flowerApps[0].e_url%>" alt="">
+                            </div>
+                            <p>评价内容: <span><%= flowerApps[0].e_word%></span></p>
+
+                        </div>
+                        <p><%= flowerApps[0].u_name %></p>
+                    <% } -%>
+                </div>
+                <div class="row3-div5">
+                    <div>
+                        <img src="/images/img/10001.jpg" alt="">
+                    </div>
+                    <div class="right-div">
+                        <p>整体评分：33333  <span>评论时间：2018-3-4</span></p>
+                        <div></div>
+                        <div>
+                            <img src="/images/img/10001.jpg" alt="">
+                        </div>
+                        <p>评价内容: <span>反反复方法发广告</span></p>
+
+                    </div>
+                    <p>用户名</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include footer.ejs%>
+<!--此模态框用于加入购物车时提醒-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>-->
+                <h4 class="modal-title" id="myModalLabel">温馨提醒</h4>
+            </div>
+            <div class="modal-body">
+                <h4 id="warnText">加入购物车成功</h4>
+                <div class="modalBtn">
+                    <button type="button" id="modalClose" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/JavaScript/jquery-3.2.1.js"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/JavaScript/js.js"></script>
+<script>
+    //商品详情和用户评价的切换函数
+    var a=1
+    $("#button-com").click(function () {
+        console.log("11111111111111111")
+        $(".row2-div4").css({display:"block"})
+        $(".row2-div3").css({display:"none"})
+    })
+    $("#button-app").click(function () {
+        console.log("33333333333")
+        $(".row2-div4").css({display:"none"})
+        $(".row2-div3").css({display:"block"})
+    })
+    //收藏按钮函数
+    $(".p-i>i").click(function () {
+        $(".p-i>i").css({color:"#996633"})
+    })
+    //数量的加减函数
+    $(".span-js").click(function () {
+
+        if(a>=1){
+            a++
+            $(".span-s").val(a)
+            var fnum = $(".span-s").val();
+            console.log(fnum);
+            sessionStorage.setItem("nums",fnum)
+        }
+    })
+    $(".span-jq").click(function () {
+
+        if(a>=2){
+            a--
+            $(".span-s").val(a)
+            var fnum = $(".span-s").val();
+            console.log(fnum);
+            sessionStorage.setItem("nums",fnum)
+            
+        }
+    })
+    //图片链接函数
+
+    $('.quitess').on("click",function () {
+        $.ajax({
+            url:"/quite",
+            type:"post",
+            success:function (data) {
+                console.log(data)
+                if(data=="1"){
+                    //location.href="../";
+                    location.href = window.location.href;
+                }
+                else{
+                    // $(".loginpromit").css("display","block")
+                    $(".loginpromit").html("!账号或密码不正确")
+                }
+            }
+        })
+    });
+    
+    $('.btn-gm a').on("click",function () {
+        var fnum = $(".span-s").val();
+        sessionStorage.setItem("nums",fnum)
+    })
+    //加入购物车事件
+    let addShopCar=document.getElementsByClassName("btn-jr")[0];
+    addShopCar.addEventListener("click",function(){
+        //花的数量
+        let f_num=document.getElementsByClassName("span-s")[0].value;
+        //得到花的价格
+        let f_jg=document.getElementById("span-jg").innerHTML;
+        let f_name=document.getElementsByTagName("h3")[0].innerHTML;
+        console.log("添加到购物车表的数据",f_name,f_num,f_jg,<%= flowermes[0].f_id %>);
+        $.ajax({
+            url:"/addShopCar.do",
+            type:"post",
+            data:{
+                fid:<%= flowermes[0].f_id %>,
+                fnum:f_num,
+                fjg:f_jg
+            },
+            success:function(data){
+                if(data.length>0){
+                    $("#myModal").modal("show");
+                }
+            },
+            error:function(err){
+                console.log("加入购物车时错误信息",err);
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('./font/iconfont.eot');
+    src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./font/iconfont.woff') format('woff'),
+    url('./font/iconfont.ttf') format('truetype'),
+    url('./font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.header-3-pic{
+    height: 150px;
+    overflow: hidden;
+    padding: 0;
+}
+.header-3-pic img{
+    width: 100%;
+    padding: 0;
+}
+section{
+    margin-top: 20px;
+}
+/*路径导航*/
+.pathH2 span{
+    color: #ddc296;
+    font-size: 18px;
+}
+.pathH2 a{
+    color: #ddc296;
+    font-size: 20px;
+}
+/*内容*/
+.headerDiv{
+    background-color: #e5e5e5;
+    height: 50px;
+    margin-top:40px;
+}
+.headerDiv>div{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    background-color: #dfc397;
+    font-size:20px;
+}
+.orderDiv{
+    border: 1px solid #eae7e9;
+}
+.orderDiv{
+    border: 1px solid #eae7e9;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.orderDiv>div>div{
+    padding:3% 0;
+}
+#flowerImg{
+    width:70%;
+}
+.flowerMenu{
+    width:70%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+#flowerMuch{
+    font-weight: bold;
+}
+.flowerMenu>p:first-child{
+    font-size:18px;
+}
+/*评星*/
+.star-evaluate{
+    height: 50px;
+}
+.star-evaluate .com-star{
+    float: left;
+    margin-left: 10px;
+    margin-right:10px;
+}
+.star-evaluate p{
+    font-size:18px;
+    float: left;
+}
+.com-star .xx-star {
+    background:url("http://www.jq22.com/tp/08479369-5c18-47e1-8506-df9d4b457d7b.png") no-repeat center;
+    height:18px;
+    width:18px;
+    display:inline-block;
+    cursor: pointer;
+}
+.com-star .xx-star2 {
+    background:url("http://www.jq22.com/tp/d678e156-a6ef-454e-a09a-f79bc1435bda.png") no-repeat center;
+    height:18px;
+    width:18px;
+    display:inline-block;
+    cursor: pointer;
+}
+.display-star{
+    color: #ff8a00;
+    font-size:16px;
+    line-height: 20px;
+}
+.display-star~span{
+    color: #ff8a00;
+    font-size:16px;
+    line-height: 20px;
+}
+/*!*表单*!*/
+.colorI{
+    color: #ff8a00;
+    font-weight: bold;
+}
+.hide{
+    display: none;
+}
+#flowerId{
+    display: none;
+}
+#forderId{
+    display: none;
+}
+/*晒图*/
+#imgShow{
+    width: 100%;
+    background-color: white;
+}
+#imgShow img{
+    width:24%;
+}
+.btnDiv{
+    margin-top: 10px;
+}
+.showImgDiv{
+    position: relative;
+    width:100px;
+    height:100px;
+    background-size: contain;
+    display: inline-block;
+}
+.showImgDiv span{
+    position: absolute;
+    right: 5px;
+    top:5px;
+    display: none;
+    cursor: pointer;
+}
+.showImgDiv:hover span{
+    display: block;
+}
+.showImgBtn {
+    background-color: #93b5c7;
+    color: white;
+    border: none;
+    outline: none;
+    width: 80px;
+    height:30px;
+    line-height:30px;
+}
+.btnDiv>div{
+    background-color:#eff9fd;
+    color: #a9a7a8;
+    display: inline-block;
+    width:130px;
+    height:40px;
+    line-height:40px;
+}
+.btnDiv>p{
+    margin-top: 30px;
+}
+/*按钮*/
+.submitDtn{
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    margin-right:74px;
+    margin-top:40px;
+}
+.submitDtn:hover{
+    background-color: white;
+    border: 1px solid #A9A7A8;
+    color: black;
+}

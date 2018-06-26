@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>会员中心</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <link href="../css/memberCenter.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style type="text/css" media="screen">
+        section{
+            margin-top: 130px;
+            background-color: white;
+        }
+        body{
+
+        }
+    </style>
+</head>
+<body>
+<%- include header.ejs%>
+<section class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="pathDiv">
+                <!--路径导航，需要改动-->
+                <h2 class="pathH2">
+                    <a href="./">首页</a>
+                    <span> > </span>
+                    <span>个人中心</span>
+                </h2>
+            </div>
+            <div class="memberDiv" >
+                <img src="../images/memberLogo.png" alt="" class="memberLogo">
+                <h1 class="text-center">PERSONAL CENTER</h1>
+                <!--<h2 class="text-center">个人中心</h2>-->
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2" id="leftNav">
+                <div class="userLogo">
+                    <img src="../images/upload/<%= userMeg[0].u_url%>" alt="">
+                </div>
+                <br>
+                <div class="userMenu">
+                    <p id="userName"><%= userMeg[0].u_name%></p>
+                    <!-- 需要增加 -->
+                    <p>
+                        会员等级：
+                        <% if (userMeg[0].g_id == 1) { -%>
+                            <img src="../images/vip1.png" alt="">
+                        <% } -%>
+                    </p>
+                    <p>
+                        花瓣值：
+                        <span id="flowMark"><%= userMeg[0].u_huab%></span>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="colorH3">个人信息</h4>
+                    <p><a href="page/userziliaoxiugai.html" class="blackA" target="myIframe">个人资料</a></p>
+                </div>
+                <div>
+                    <h4 class="colorH3">交易管理</h4>
+                    <p><a href="page/shopCar.html" class="blackA" target="myIframe">我的购物车</a></p>
+                    <p><a href="page/allGoods.html" class="blackA" target="myIframe">所有订单</a></p>
+                    <p><a href="page/haveGoods.html" class="blackA" target="myIframe">已买商品</a></p>
+                    <p><a href="page/waitPay.html" class="blackA" target="myIframe">待付商品</a></p>
+                    <p><a href="#" class="blackA" target="myIframe">我的收藏</a></p>
+                </div>
+                <div>
+                    <h4 class="colorH3">会员中心</h4>
+                    <p><a href="page/grade.html" class="blackA" target="myIframe">我的会员</a></p>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10" id="menuDiv">
+                <iframe src="page/shopCar.html" frameborder="0" name="myIframe" scrolling="no" id="ifram"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include footer.ejs%>
+<script src="../JavaScript/jquery-3.2.1.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../JavaScript/memberCenter.js"></script>
+<!-- 改名 -->
+<script type="text/javascript">
+    $('.quitess').on("click",function () {
+        $.ajax({
+            url:"/quite",
+            type:"post",
+            success:function (data) {
+//                console.log(data)
+                if(data=="1"){
+                    location.href="../";
+                    //location.href = window.location.href;
+                }
+                else{
+                    // $(".loginpromit").css("display","block")
+                    $(".loginpromit").html("!账号或密码不正确")
+                }
+            }
+        })
+    });
+</script>
+</body>
+</html>

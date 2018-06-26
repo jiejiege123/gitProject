@@ -1,0 +1,108 @@
+table{
+    width: 100%;
+}
+.myth{
+    text-align: center;
+}
+.mytr{
+    background-color: #f0f0f0;
+}
+.liimg{
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+}
+.mybox{
+    background-color: white;
+}
+.contentTr{
+    height: 140px;
+    padding-top: 20px;
+}
+.mybtn{
+    border: none;
+    background-color: transparent;
+    outline-style: none;
+}
+.boxth>input{
+    margin-left:7%;
+}
+.boxth>span{
+    margin-left: 12%;
+}
+.upPage{
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.downPage{
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+    margin-bottom: 20px;
+}
+#payBtn{
+    width: 100px;
+    height: 50px;
+    margin-left:50px;
+    background-color: #cccccc;
+    color: black;
+    outline: none;
+    border: none;
+    float: right;
+}
+.footspan{
+    margin: auto 20px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.moneyspan{
+    color: #996633;
+}
+.mypage{
+    height: 30px;
+}
+#td1{
+    width:200px;
+    padding-left: 15px;
+}
+#alldel{
+    margin-left: 50px;
+    border: none;
+}
+#allcheck {
+    border:none;
+}
+.footSel{
+    margin: 20px auto;
+}
+.foot2{
+    line-height: 50px;
+}
+#myModal{
+    margin-top: 100px;
+    height: 300px;
+}
+.modal-header{
+    background-color: #000000;
+    color:white;
+}
+.modal-body{
+    text-align: center;
+}
+.modal-body>h4{
+    margin: 20px auto 30px auto;
+    font-size: 15px;
+}
+.modalBtn>button{
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+}

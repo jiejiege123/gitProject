@@ -1,0 +1,67 @@
+/*thead*/
+thead th:not(:first-child){
+    text-align: center;
+}
+.bgTr{
+    background-color:#e1dfe0;
+}
+.goodsDiv{
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+}
+.goodsDiv img{
+    width:70%;
+}
+.listTr td:not(:first-child){
+    vertical-align: middle;
+}
+.listTr td:nth-of-type(1){
+    width:20%;
+}
+.listTr td:nth-of-type(2){
+    width:30%;
+}
+.flowerName{
+    display: block;
+    height: 100%;
+}
+.flowerMenu{
+    border-left: 1px solid black;
+}
+tbody i{
+    cursor: pointer;
+}
+.listTr td:nth-last-of-type(2) p{
+    cursor: pointer;
+}
+.listTr td:nth-last-of-type(1) p{
+    cursor: pointer;
+}
+.listTr td:nth-last-of-type(1) button{
+    cursor: pointer;
+    margin-top:0;
+    margin-bottom: 5px;
+}
+.noImg{
+    width:100px;
+}
+/*按钮*/
+.pageBtn{
+    margin-top: 40px;
+}
+.pageBtn:hover{
+    background-color: #a9a7a8;
+}/*按钮*/
+.pageBtn{
+    margin-top: 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+}
+.pageBtn:hover{
+    background-color: white;
+    border: 1px solid #A9A7A8;
+    color: black;
+}

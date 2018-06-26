@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var startTime=new Date();
+    startTime.setFullYear(2215,12,21);
+    //注意：setFullYear函数的第二个参数，代表月份，其取值范围：0-11，因此如果是：2013年7月20日，则这里的参数应该是：2013,6,20
+    startTime.setHours(23);
+    startTime.setMinutes(59);
+    startTime.setSeconds(59);
+    startTime.setMilliseconds(999);
+    var EndTime=startTime.getTime();
+    function GetRTime(){
+        var NowTime=new Date();
+        var nMS=EndTime-NowTime.getTime();
+        var nD=Math.floor(nMS/(1000*60*60*24));
+        var nH=Math.floor(nMS/(1000*60*60))%24;
+        var nM=Math.floor(nMS/(1000*60))%60;
+        var nS=Math.floor(nMS/1000)%60;
+        if (nMS<0){
+            $("#dao").hide();
+            $("#daoend").show();
+        }else{
+            $("#dao").show();
+            $("#daoend").hide();
+            $("#RemainD").text(nD);
+            $("#RemainH").text(nH);
+            $("#RemainM").text(nM);
+            $("#RemainS").text(nS);
+        }
+    }
+    $(document).ready(function(){
+        var timer_rt=window.setInterval("GetRTime()",1000);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <link href="../css/haveGoods.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<section class="container-fluid">
+    <div class="row">
+        <div class="top_bar" id="grade">
+            <button id="hG" class="btnsck">已买商品</button>
+            <button id="wG" class="btns">未到商品</button>
+        </div>
+        <table class="table">
+            <thead>
+            <tr class="text-center">
+                <th>
+                    <input type="checkbox" id="checkboxInput"> 全选
+                </th>
+                <th class="text-center">商品信息</th>
+                <th class="text-center">数量</th>
+                <th class="text-center">单价</th>
+                <th class="text-center">实付款</th>
+                <th class="text-center">交易状态</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody id="content"></tbody>
+        </table>
+        <!--批量购买按钮-->
+        <div class="text-right" id="waitPayBtn" style="display: none"></div>
+        <!--分页-->
+        <div class="text-right">
+            <button class="pageBtn" id="preBtn">上一页</button>
+            <button class="pageBtn" id="nextBtn">下一页</button>
+        </div>
+</section>
+
+
+
+<script src="../JavaScript/jquery-3.2.1.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../JavaScript/allGoods.js"></script>
+<script src="../JavaScript/orderMenu.js"></script>
+<script src="../JavaScript/evaluateClick.js"></script>
+<!-- 改名 -->
+</body>
+</html>

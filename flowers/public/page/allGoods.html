@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/font/iconfont.css" rel="stylesheet" type="text/css">
+    <link href="../css/allGoods.css" rel="stylesheet" type="text/css">
+    <!-- 改名 -->
+</head>
+<body>
+<section class="container-fluid">
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr class="text-center">
+                <th>
+                    <input type="checkbox" id="checkboxInput"> 全选
+                </th>
+                <th class="text-center">商品信息</th>
+                <th class="text-center">数量</th>
+                <th class="text-center">单价</th>
+                <th class="text-center">实付款</th>
+                <th class="text-center">交易状态</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody id="content"></tbody>
+        </table>
+        <!--批量购买按钮-->
+        <div class="text-right" id="waitPayBtn"></div>
+        <!--分页-->
+        <div class="text-right">
+            <button class="pageBtn" id="preBtn">上一页</button>
+            <button class="pageBtn" id="nextBtn">下一页</button>
+        </div>
+        <!--取消订单模态框-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">取消订单</h4>
+                    </div>
+                    <div class="modal-body">
+                        <select name="closeRason" id="closeRason">
+                            <option value="0">请选择关闭理由</option>
+                            <option value="1">我不想买了</option>
+                            <option value="2">信息填写错误，重新拍</option>
+                            <option value="3">付款遇到问题（如余额不足、不知道怎么付款等）</option>
+                            <option value="4">拍错了</option>
+                            <option value="5">其他原因</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="pageBtn" data-dismiss="modal">关闭</button>
+                        <button type="button" class="pageBtn" id="closeModel">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+</section>
+<script src="../JavaScript/jquery-3.2.1.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../JavaScript/allGoods.js"></script>
+<script src="../JavaScript/orderMenu.js"></script>
+<script src="../JavaScript/evaluateClick.js"></script>
+<!-- 改名 -->
+</body>
+</html>

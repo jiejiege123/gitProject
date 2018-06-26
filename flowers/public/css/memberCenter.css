@@ -1,0 +1,63 @@
+.header-3-pic{
+    height: 150px;
+    overflow: hidden;
+    padding: 0;
+}
+.header-3-pic img{
+    width: 100%;
+    padding: 0;
+}
+
+/*路径导航*/
+.pathH2 span{
+    color: #ddc296;
+    font-size: 18px;
+}
+.pathH2 a{
+    color: #ddc296;
+    font-size: 20px;
+}
+/*个人中心标题*/
+.memberDiv{
+    position: relative;
+}
+.memberLogo{
+    position: absolute;
+    left: calc(50% - 124px);
+    z-index: 0;
+}
+.memberDiv h1{
+    position: relative;
+    height: 124px;
+    line-height: 124px;
+    color: #ddc296;
+    z-index: 1;
+}
+/*左侧导航用户logo*/
+.userLogo{
+    margin-bottom: 5%;
+}
+.userLogo img{
+    display: block;
+    margin:0 auto;
+/*     padding:5% 0; */
+    width: 100%;
+}
+.userMenu p{
+    line-height:5px;
+}
+/*左侧导航列表*/
+#leftNav>div:not(:first-child){
+    margin-bottom: 15%;
+}
+.colorH3{
+    color:#dec194;
+}
+.blackA{
+    color: black;
+}
+/*右侧iframe*/
+iframe{
+    width: 100%;
+    min-height:830px;
+}
