@@ -1,0 +1,145 @@
+.disflex{
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+}
+.el-main{
+	padding: 0 24px;
+	.forum-module{
+		background: #fff;
+		border: 1px solid #d4dde2;
+		margin-bottom: 24px;
+		.forum-header{
+			padding: 0 24px;
+			font-size: 14px;
+			color: #565656;
+			background: #eceff1;
+			height: 50px;
+			line-height: 50px;
+			overflow: hidden;
+			border-bottom: 1px solid #d4dde2;
+			.forum-name{
+				float: left;
+				margin-right: 25px;
+			}
+		}
+		.tree-layout{
+			position: relative;
+			min-height: 680px;
+			overflow: hidden;
+			.tree{
+				height: 100%;
+				overflow: auto;
+				position: absolute;
+				border-right: 1px solid #d4dde2;
+				width: 200px;
+				.reflash{
+					height: 50px;
+					line-height: 50px;
+					padding: 0 24px;
+					color: #8a8e98;
+					cursor: pointer;
+					text-align: left
+				}
+				.el-tree{
+					color: #353535;
+				}
+			}
+			.tree-list{
+				margin-left: 200px;
+				.table-top-bar{
+					padding: 20px 0;
+					margin: 0 24px;
+					position: relative;
+					.disflex;
+					.chioch{
+						.disflex;
+						.search-group{
+							display: flex;
+							-ms-align-items: center;
+							align-items: center;
+							justify-content: flex-end;
+							label{
+								padding-right: 10px;
+								white-space: nowrap;
+								color: #5e5e66
+							}
+							.el-input{
+								margin-right: 15px;
+							}
+						}
+					}
+				}
+				.el-table{
+					border-left: 1px solid #d4dde2;
+					border-top: 1px solid #d4dde2;
+				}
+				.table-footer{
+					.disflex
+				}
+			}
+		}
+	}
+}
+
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 178px;
+  height: 178px;
+  line-height: 178px;
+  text-align: center;
+}
+.avatar {
+  width: 178px;
+  height: 178px;
+  display: block;
+}
+.el-cascader{
+	margin-right: 10px;
+	margin-left: 15px;
+	width: 150px;
+}
+
+/*//操作按钮css*/
+  .t-order {
+    background: #ffbf35;
+  }
+  .t-edit {
+    background: #17d57e;
+  }
+  .t-del {
+    background: #ff8b53;
+  }
+  .t-del, .t-order, .t-edit, .t-rename{
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 3px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 1px;
+    display: inline-block;
+    cursor: pointer;
+    transition: .5s;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  .imgs{
+  	width: 60%;
+  	height: auto;
+  }

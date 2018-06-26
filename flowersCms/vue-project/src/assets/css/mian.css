@@ -1,0 +1,176 @@
+/*
+* @Author: ZZZ
+* @Date:   2018-06-08 09:52:30
+* @Last Modified by:   ZZZ
+* @Last Modified time: 2018-06-10 09:45:42
+*/
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+li{
+	list-style: none;
+}
+.el-main{
+  padding: 0 24px;
+}
+.span-dc{
+	margin-bottom: 24px;
+}
+.span-dc .handing-box{
+	padding: 24px 47px;
+}
+.grid-content{
+	height: 112px;
+	padding: 16px 20px;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.flex-grid,.flex-grid i{
+	font-size: 33px;
+	color: white;
+}
+.flex-grid{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.grid-name{
+	margin-top: 16px;
+	text-align: right;
+	color: white;
+}
+.sys-panel{
+	background: white;
+	padding-right: 0!important;
+	padding-left: 0!important;
+}
+.sys-header{
+	height: 48px;
+	line-height: 48px;
+	border-bottom: 1px solid #f5f5f5;
+	display: flex;
+	justify-content: space-between;
+}
+
+.handing-box{
+	padding: 24px;
+	display: flex;
+	justify-content: space-between;
+}
+.handing-items{
+	cursor: pointer;
+	text-align: center;
+	float: left;
+}
+.handing-items i{
+	font-size: 28px;
+	color: #c0d9ec
+}
+.handing-count{
+	margin-top: 9px;
+	font-size: 18px;
+	height: 22px;
+	line-height: 22px;
+	color: #353535;
+}
+.clort-box{
+	margin: 0 auto;
+	width: 64px;
+	height: 64px;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 6px;
+	display: flex;
+	-ms-align-items: center;
+	justify-content: center;
+	align-items: center;
+}
+.clort-box i{
+	color: white;
+	font-size: 36px!important;
+}
+.handing-name{
+	line-height: 20px;
+	font-size: 14px;
+	color: #999;
+	margin-top: 4px;
+}
+.color-1{
+	background: #ffbe60;
+}
+.color-2{
+	background: #55de9f;
+}
+.color-3{
+	background: #fb99cc;
+}
+.color-4{
+	background: #87c0ea;
+}
+.sys-header h3{
+	font-size: 16px;
+	text-align: left;
+	margin-left: 24px;
+	font-weight: 400
+}
+.el-radio-group{
+	margin-right: 24px;
+}
+.el-radio-button--small .el-radio-button__inner{
+	padding: 5px 15px!important;
+}
+.el-icon-more{
+	margin-right: 15px;
+	cursor: pointer;
+	color: #f0f0f0;
+}
+.el-icon-more:hover{
+	color: #353535;
+}
+.p-24{
+	padding: 24px 24px!important;
+	text-align: left;
+	height: 128px;
+}
+.p-24 p{
+	font-size: 14px;
+	color: #656565;
+	margin-top: 5px;
+	line-height: 1.5;
+}
+.p-24 .el-button {
+    padding: 8px 15px;
+    min-width: 80px
+}
+.flex-system{
+	display: flex;
+	-ms-align-items: flex-start;
+	align-items: flex-start;
+}
+.system-xitong{
+	width: 78px;
+	height: 78px;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	background: #d8dce5;
+	border-radius: 4px;
+	margin-right: 24px;
+}
+.system-xitong i{
+	font-size: 48px;
+	color: #aab2c2;
+}
+p.sys-info{
+	font-size: 14px;
+	margin-top: -1px;
+	margin-bottom: 6px;
+	color: black;
+}
+.sys-gray{
+	color: #656565;
+}

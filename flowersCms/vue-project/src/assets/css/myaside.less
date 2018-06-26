@@ -1,0 +1,123 @@
+
+.aside{
+	background: #188ae2;
+	width: 220px;
+	float: left;
+	position: fixed;
+	transition: width .3s;
+	text-align: left;
+	font-size: 16px;
+	z-index: 1999;
+    transition: width .3s;
+    top: 80px;
+    height: 100%;
+	.asiderbar{
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 60px);
+		overflow: hidden;
+		aside{
+			overflow: scroll;
+			width: 237px;
+			height: 100%;
+			// &::-webkit-scrollbar {display:none};
+
+			.aside-title{
+				display: block;
+				color: #3caeff;
+				padding: 20px 24px;
+				font-size: 16px;
+				outline: none;
+			}
+			.el-menu-item{
+				box-sizing: border-box;
+				background-color: #188ae2;
+				width: 100%;
+				color: #fff;
+				font-size: 16px;
+				height: 48px;
+				line-height: 48px;
+				display: flex;
+				-ms-align-items: center;
+				align-items: center;
+				&:hover{
+					background: #1276c3;
+				}
+				i{
+					color: #fff;
+					margin-right: 16px;
+				}
+
+			}
+		}
+	}
+}
+
+.el-menu-item.is-active{
+	background: #1276c3!important;
+	// border-left: 2px solid #F5F72F;
+	&::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		height: 100%;
+		width: 2px;
+		background: #f5f72f;
+	}
+}
+.el-menu{
+	border-right-style: none;
+	padding-bottom: 10px;
+	background: #188AE2;
+	
+}
+.el-submenu{
+	.el-menu-item.is-active{
+		&::after{
+		    background: #fff;
+		}
+	}
+	.el-menu-item{
+		padding-left: 59px!important;
+		&::after{
+			content: "";
+		    display: block;
+		    width: 5px;
+		    height: 5px;
+		    border-radius: 50%;
+		    background: #65bfff;
+		    position: absolute;
+		    top: 50%;
+		    margin-top: -3px;
+		    left: 35px;
+		}
+	}
+}
+.el-menu--collapse{
+	.el-menu-item{
+		height: 70px!important;
+		i{
+			font-size: 26px;
+		}
+	}
+}
+.el-menu--popup{
+	.el-menu-item{
+		color: #656565!important;
+	}
+	.el-menu-item.is-active{
+		color: #353535!important;
+		background: #ecf5ff!important;
+		&::before{
+			background: #ecf5ff;
+		}
+	}
+}
+.aside-colls{
+	width: 70px!important;
+}
+.issw{
+	visibility: hidden;
+}

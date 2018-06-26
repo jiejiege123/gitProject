@@ -1,0 +1,112 @@
+.el-main{
+	padding: 0 24px;
+	.forum-module{
+		background: #fff;
+		border: 1px solid #d4dde2;
+		margin-bottom: 24px;
+		.forum-header{
+			padding: 0 24px;
+			font-size: 14px;
+			color: #565656;
+			background: #eceff1;
+			height: 50px;
+			line-height: 50px;
+			overflow: hidden;
+			border-bottom: 1px solid #d4dde2;
+			.forum-name{
+				float: left;
+				margin-right: 25px;
+			}
+		}
+		.table-top-bar{
+			padding: 20px 0;
+			margin: 0 24px;
+			position: relative;
+			.el-col{
+				display: flex;
+				justify-content: flex-start;
+				-ms-align-items: center;
+				align-items: center;
+				label{
+					padding-right: 10px;
+					line-height: 32px;
+					white-space: nowrap;
+					color: #5a5e66;
+					font-size: 14px;
+				}
+				span{
+					padding: 0 10px;
+					color: #c7c7c7;
+					line-height: 32px;
+				}
+				.block{
+					// width: calc(100% - 120px);
+					width: 45%;
+					div{
+						width:100%;
+					}
+				}
+			}
+		}
+	}
+}
+@media all and (min-width: 1200px) { 
+	.block{
+		// width: calc(100% - 120px);
+		width: 220px!important;
+	}
+	.search{
+		width: 560px!important;
+	}
+
+}
+@media all and (min-width: 1349px) { 
+	.search{
+		margin-bottom: 0px!important;
+	}
+
+}
+.el-select{
+	margin-right: 20px;
+}
+.el-button {
+    padding: 8px 15px;
+    min-width: 80px;
+}
+.search{
+	margin-bottom: 18px;
+}
+.el-table {
+    color: rgb(53, 53, 53);
+    border-top: 1px solid rgb(238, 238, 238);
+}
+.el-table th{
+    text-align: center;
+}
+.table-bottom-bar{
+	padding: 0px 24px;
+	margin: 20px 0px;
+	overflow: hidden;
+}
+.el-pagination{
+	text-align: right;
+}
+.edit{
+	border: none;;
+	outline: none;
+	border-radius: 3px;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	margin-right: 2px;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	color: white;
+}
+.t-edit{
+	background: #17d57e;
+}
+.t-del{
+	background: #ff8b53;
+}

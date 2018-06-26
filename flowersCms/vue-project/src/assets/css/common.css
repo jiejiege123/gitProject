@@ -1,0 +1,202 @@
+/*
+* @Author: ZZZ
+* @Date:   2018-06-08 10:00:44
+* @Last Modified by:   ZZZ
+* @Last Modified time: 2018-06-18 14:51:29
+*/
+.mains{
+  padding-top: 80px!important;
+}
+
+.aside .icon-home2{
+	color: #2691e3
+}
+.aside .el-submenu__title{
+  background-color: #188ae2;
+  color: #fff;
+  font-size: 16px;
+  height: 48px;
+  line-height: 48px;
+
+}
+.aside .el-submenu__title i{
+  background-color: #188ae2;
+  color: #fff;
+  font-size: 18px;
+  margin-right: 16px;
+  transition: transform .3s;
+  transition: border-color 0.3s,background-color 0.3s,color 0.3s;
+
+}
+.aside .el-submenu__icon-arrow{
+  margin-right: 0px!important;
+}
+.aside .el-submenu__title:hover i{
+  background: #1276c3;
+
+}
+.aside .el-submenu__title:hover{
+  background: #1276c3;
+}
+.aside .el-menu--collapse {
+  width: 70px;
+}
+.aside .el-menu--collapse li {
+  height: 70px;
+  line-height: 70px;
+}
+.aside .el-menu--collapse li .el-submenu__title{
+  height: 100%;
+  padding-top: 6px;
+}
+.aside .el-menu--collapse li i{
+  font-size: 26px;
+}
+.aside .el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 220px;
+}
+.el-tooltip{
+  padding: 8px 20px!important;
+}
+a{
+  text-decoration: none;
+}
+.mains{
+  position: relative;
+  margin-left: 220px;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+.aside-coll{
+  margin-left: 70px!important;
+  transition: all 0.3s
+}
+.el-breadcrumb{
+  padding: 0 24px;
+  height: 64px;
+  line-height: 64px;
+  overflow: hidden;
+}
+.el-breadcrumb__inner i{
+  font-size: 18px;
+  color: #2691e3;
+}
+.el-breadcrumb__inner {
+    color: #999;
+}
+.el-breadcrumb__inner {
+  color: #999 !important;
+}
+.el-breadcrumb__inner.is-link:hover, .el-breadcrumb__inner a:hover{
+  cursor: pointer!important;
+}
+#main .el-table thead{
+  
+  color: #89a8c0;
+  font-size: 14px;
+
+}
+#main .el-table th{
+  background: #f6f9fb;
+  padding-left: 24px;
+  height: 45px;
+  font-weight: 400;
+  padding: 10px 12px;
+  text-align: center;
+}
+#main .el-table th:first-child{
+  text-align: center;
+}
+
+.el-input__inner {
+  height: 32px;
+}
+.el-input__icon {
+  line-height: 32px;
+}
+#hotg .el-table th{
+  text-align: center;
+  font-weight: 400;
+}
+#gwarn .el-table th{
+  text-align: center;
+  font-weight: 400;
+}
+#allproduct .el-table th{
+  text-align: center;
+  font-weight: 400;
+}
+.el-tree-node__content{
+  height: 32px;
+}
+.el-tree-node__content{
+  padding-left: 16px!important;
+}
+.el-tree-node__children{
+  padding-left: 16px!important;
+}
+
+#productEdit .el-form-item__label{
+  width: 160px!important;
+  padding-right: 30px;
+  line-height: 36px;
+  text-align: right;
+  vertical-align: middle;
+  float: left;
+  font-size: 14px;
+  color: #5a5e66;
+  box-sizing: border-box;
+}
+#productEdit .el-form-item__content{
+  margin-left: 160px!important;
+  text-align: left;
+}
+@media only screen and (min-width: 1200px){
+  #productEdit .el-input,#productEdit  .el-textarea {
+    width: 400px!important;
+  }
+  #productEdit .meatera .select,#productEdit .meatera .select div{
+    width: 200px!important;
+  }
+}
+#productEdit .el-input,#productEdit  .el-textarea{
+  width: 80%;
+}
+#productEdit .meatera .select{
+  width: 40%;
+}
+#allproduct a{
+  color: white
+}
+
+/* 商品图片 */
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 145px;
+  height: 145px;
+  line-height: 145px;
+  text-align: center;
+}
+.avatar {
+  width: 145px;
+  height: 145px;
+  display: block;
+}
+.details .el-form-item__content{
+  line-height: 20px;
+}
+#allproduct .el-tree-node__children .is-current{
+  background-color: #f5f7fa
+}

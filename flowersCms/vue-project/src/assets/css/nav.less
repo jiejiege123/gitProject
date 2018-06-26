@@ -1,0 +1,53 @@
+.nav{
+	height: 80px;
+	position: fixed;
+	top: 0px;
+	background-color: #fff;
+	box-shadow: 10px 1px 15px rgba(0, 0, 0, 0.17);
+	padding: 0 24px;
+	width: 100%;
+	z-index: 2000;
+	.log{
+		line-height: 80px;
+		font-size: 24px;
+		color: #01121f;
+		float: left;
+		img{
+			width: 100px;
+			margin-bottom: 3px;
+			vertical-align: middle;
+		}
+	};
+	.collapse-menu{
+		float: left;
+		line-height: 80px;
+		font-size: 24px;
+		img{
+			vertical-align: middle;
+			margin-left: 25px;
+		}
+	}
+	.user-inner{
+		float: right;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		img{
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-right: -16px;
+		}
+		span{
+			margin-left: 30px;
+			cursor: pointer;
+			font-size: 16px;
+			i{
+				font-size: 20px;
+				color: #777;
+				&:hover { color: #2199ee }
+			}
+		}
+	}
+}
